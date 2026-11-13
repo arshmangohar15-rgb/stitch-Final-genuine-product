@@ -605,11 +605,13 @@
 
   function updateMainImage(index, btnElement) {
     const mainImg = document.getElementById('main-product-image');
+    const thumbnailImage = btnElement.querySelector('img');
     const fullAlt = btnElement.getAttribute('data-full-alt');
     const caption = btnElement.getAttribute('data-caption');
     
-    if (mainImg && fullAlt) {
-      mainImg.setAttribute('data-alt', fullAlt);
+    if (mainImg && thumbnailImage) {
+      mainImg.src = thumbnailImage.src;
+      if (fullAlt) mainImg.setAttribute('data-alt', fullAlt);
       mainImg.setAttribute('alt', caption || `Product 1 View ${index + 1}`);
       // Visual feedback blink
       mainImg.classList.add('opacity-80');
@@ -625,6 +627,17 @@
 
     btnElement.classList.remove('opacity-70');
     btnElement.classList.add('ring-2', 'ring-primary', 'ring-offset-2', 'opacity-100');
+  }
+
+  const productImageParams = new URLSearchParams(window.location.search);
+  const selectedProductImage = productImageParams.get('image');
+  const selectedProductAlt = productImageParams.get('alt');
+  if (selectedProductImage) {
+    const mainImg = document.getElementById('main-product-image');
+    if (mainImg) {
+      mainImg.src = selectedProductImage;
+      if (selectedProductAlt) mainImg.alt = selectedProductAlt;
+    }
   }
 
   function openWhatsAppModal() {
