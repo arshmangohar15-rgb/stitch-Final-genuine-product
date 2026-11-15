@@ -121,14 +121,13 @@
 </div>
 <!-- Filter Controls -->
 <div class="flex items-center gap-2 overflow-x-auto pb-1" id="filterBar">
-<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (10)</button>
+<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (2)</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="trending" onclick="filterCatalog('trending')">Trending</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="best-sellers" onclick="filterCatalog('best-sellers')">Best Sellers</button>
-<button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="new-arrivals" onclick="filterCatalog('new-arrivals')">New Arrivals</button>
 </div>
 </div>
-<!-- 10 Products Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-gutter" id="productsContainer">
+<!-- Product Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter" id="productsContainer">
 <!-- Product 1 -->
 <div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="trending best-sellers">
 <a class="relative aspect-square bg-surface-container-low overflow-hidden block" data-path="product-detail" href="product detail.html">
@@ -161,22 +160,6 @@
 </div>
 </div>
 </div>
-<!-- Product 3 -->
-<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer" data-category="trending" onclick="if(!event.target.closest('a') &amp;&amp; !event.target.closest('button')) { window.location.href = 'product detail.html'; }"><a class="relative aspect-square bg-surface-container-low overflow-hidden cursor-pointer block" data-path="product-detail" href="product detail.html"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product 3 Image - Crisp high end audio accessory device on minimal stone pedestal, natural reflections, clean aesthetic studio light, genuine original label" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrQJvJlSpU85q3mAvuiy6beBn9J3O_KQBVXDl7p3UEGbmAfmzv4nipKLlYoT51aqc5TqhNt_8H7aMX0Okw39hQ5w6l1RvocAW-MVGQpRWfsmiveLyHmvfbl78CiVy3I7YIZdTQtdEKhjdcnK0UUmSHp7vEB5bdDYBwDqDVoJ-KIDsCBwjItAu7PVT6AaaIqpI-3UFBRaBkRQ3hp9y-ZGPVWreqs6Enk2MlFzON2rE"><div class="absolute inset-0 bg-on-surface/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="material-symbols-outlined text-[36px] mb-1">verified</span><span class="font-label-sm font-semibold">Product 3 Image - Click to view detail</span></div><div class="absolute top-3 left-3 flex flex-col gap-1"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm font-bold flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span> Verified Genuine</span><span class="px-2 py-0.5 rounded-full bg-primary/15 text-primary font-label-sm w-fit font-bold">Featured</span></div><span class="absolute top-3 right-3 px-2 py-1 rounded bg-error text-on-error font-label-sm font-bold shadow-sm">25% OFF</span></a><div class="p-space-md flex-1 flex flex-col justify-between"><div><div class="flex items-center justify-between text-secondary font-label-sm mb-1"><div class="flex items-center gap-1 text-amber-500"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="font-bold text-on-surface">5.0</span><span class="text-outline font-normal">(210)</span></div><span class="text-primary font-semibold">SKU: GP-003</span></div><a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors cursor-pointer block" data-path="product-detail" href="product detail.html">Product 3</a><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">High quality genuine build with manufacturer warranty and authentic verification badge.</p></div><div class="mt-space-md pt-space-xs border-t border-outline-variant/30"><div class="flex items-baseline gap-2 mb-3"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">$89.00</span><span class="font-label-sm text-outline font-normal">Rs. 8,900</span><span class="font-label-sm text-outline line-through ml-auto">$119.00</span></div><div class="grid grid-cols-2 gap-2"><a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html"><span class="material-symbols-outlined text-[16px]">visibility</span> Gallery</a><a class="h-10 rounded-lg bg-[#25D366] text-white font-label-sm font-semibold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://wa.me/923224268147?text=Hello%2C%20I%20want%20to%20order%20Product%203%20(%2489.00%20%2F%20Rs.%208%2C900)" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp</a></div></div></div></div>
-<!-- Product 4 -->
-<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer" data-category="new-arrivals" onclick="if(!event.target.closest('a') &amp;&amp; !event.target.closest('button')) { window.location.href = 'product detail.html'; }"><a class="relative aspect-square bg-surface-container-low overflow-hidden cursor-pointer block" data-path="product-detail" href="product detail.html"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product 4 Image - High angle precision photo of daily essential verified lifestyle accessory on clean marble counter with soft ambient shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBF_eaHu4XJ4w7sIJS4Z1CLzOvpKYUgNnvt9xOBy2J7cngGlzM4rBUeQGfLqnWG6kajjC363fIWxxoSg3fiIKlWHFZcm-KOcr0W2eEMW10LnvyQHi3_yC3-1B6NRh49yySxuxAoJf8TIl-72Jq3quCuOYaPmn8Yip4U25Zijl6rAKbxxbjgWmN22E2hSywhKVRARajyP50vfPZMh1TX_PxnewEL0KoO41BI3t7DY0"><div class="absolute inset-0 bg-on-surface/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="material-symbols-outlined text-[36px] mb-1">box_add</span><span class="font-label-sm font-semibold">Product 4 Image - Click to view detail</span></div><div class="absolute top-3 left-3 flex flex-col gap-1"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm font-bold flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span> Verified Genuine</span><span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm w-fit font-medium">In Stock</span></div><span class="absolute top-3 right-3 px-2 py-1 rounded bg-error text-on-error font-label-sm font-bold shadow-sm">18% OFF</span></a><div class="p-space-md flex-1 flex flex-col justify-between"><div><div class="flex items-center justify-between text-secondary font-label-sm mb-1"><div class="flex items-center gap-1 text-amber-500"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="font-bold text-on-surface">4.7</span><span class="text-outline font-normal">(64)</span></div><span class="text-primary font-semibold">SKU: GP-004</span></div><a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors cursor-pointer block" data-path="product-detail" href="product detail.html">Product 4</a><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">High quality genuine build with manufacturer warranty and authentic verification badge.</p></div><div class="mt-space-md pt-space-xs border-t border-outline-variant/30"><div class="flex items-baseline gap-2 mb-3"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">$24.99</span><span class="font-label-sm text-outline font-normal">Rs. 2,499</span><span class="font-label-sm text-outline line-through ml-auto">$29.99</span></div><div class="grid grid-cols-2 gap-2"><a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html"><span class="material-symbols-outlined text-[16px]">visibility</span> Gallery</a><a class="h-10 rounded-lg bg-[#25D366] text-white font-label-sm font-semibold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://wa.me/923224268147?text=Hello%2C%20I%20want%20to%20order%20Product%204%20(%2424.99%20%2F%20Rs.%202%2C499)" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp</a></div></div></div></div>
-<!-- Product 5 -->
-<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer" data-category="best-sellers trending" onclick="if(!event.target.closest('a') &amp;&amp; !event.target.closest('button')) { window.location.href = 'product detail.html'; }"><a class="relative aspect-square bg-surface-container-low overflow-hidden cursor-pointer block" data-path="product-detail" href="product detail.html"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product 5 Image - Professional photography of ergonomic tech tool on minimal wooden architectural surface with pristine product focus and authentic authenticity sticker" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0Hhxowmwhe0bnhUx8UqRUSyFBd9Ju7nwV7BM-kvqZ1dJA_lUuie5e26O3HKo-OKN28oQpugWScm31W8HFlKhpDZYl2aM_HLbXOYBiWNgy-iZCgRnF79sVx3ixY0cHJcJHlV9k4Ivn2XASnO3ZuKDkOI7ChupQ6IGErl3pYI5LzaOZpn3q18meJ8hAxYlGwPBkbYWPXZesNSCyiJl_cnSFaNQCWv1nUpGM1HBJaHQ"><div class="absolute inset-0 bg-on-surface/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="material-symbols-outlined text-[36px] mb-1">star_half</span><span class="font-label-sm font-semibold">Product 5 Image - Click to view detail</span></div><div class="absolute top-3 left-3 flex flex-col gap-1"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm font-bold flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span> Verified Genuine</span><span class="px-2 py-0.5 rounded-full bg-primary-fixed/20 text-on-primary-fixed font-label-sm w-fit font-bold">Top Rated</span></div><span class="absolute top-3 right-3 px-2 py-1 rounded bg-error text-on-error font-label-sm font-bold shadow-sm">22% OFF</span></a><div class="p-space-md flex-1 flex flex-col justify-between"><div><div class="flex items-center justify-between text-secondary font-label-sm mb-1"><div class="flex items-center gap-1 text-amber-500"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="font-bold text-on-surface">4.9</span><span class="text-outline font-normal">(180)</span></div><span class="text-primary font-semibold">SKU: GP-005</span></div><a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors cursor-pointer block" data-path="product-detail" href="product detail.html">Product 5</a><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">High quality genuine build with manufacturer warranty and authentic verification badge.</p></div><div class="mt-space-md pt-space-xs border-t border-outline-variant/30"><div class="flex items-baseline gap-2 mb-3"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">$59.00</span><span class="font-label-sm text-outline font-normal">Rs. 5,900</span><span class="font-label-sm text-outline line-through ml-auto">$75.00</span></div><div class="grid grid-cols-2 gap-2"><a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html"><span class="material-symbols-outlined text-[16px]">visibility</span> Gallery</a><a class="h-10 rounded-lg bg-[#25D366] text-white font-label-sm font-semibold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://wa.me/923224268147?text=Hello%2C%20I%20want%20to%20order%20Product%205%20(%2459.00%20%2F%20Rs.%205%2C500)" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp</a></div></div></div></div>
-<!-- Product 6 -->
-<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer" data-category="new-arrivals" onclick="if(!event.target.closest('a') &amp;&amp; !event.target.closest('button')) { window.location.href = 'product detail.html'; }"><a class="relative aspect-square bg-surface-container-low overflow-hidden cursor-pointer block" data-path="product-detail" href="product detail.html"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product 6 Image - Clean packaging box mockup and unpackaged premium item presented on sleek metallic tray with authentic barcode certificate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ6scF1EUCMCzuLTvbOcKGgV-Kpjaob0Y7Sr5uX3_QAau3qQUb71IIAKJfCvQU9P4Me6JGFhQn_BSyQNmwb0ESQtJIoizXy9zvEcJg55A_gb-qIP4owso3XBP7Rg1KKLgfmX6tw2FJqjPyn5htuo5OUT68an8Ve6EJbQIEbeOjXyLP1SenH1C2NNfp9C18nC52wDyN9rPS1D-rsr6tcVzztHwDT8kYFCy8485uXL8"><div class="absolute inset-0 bg-on-surface/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="material-symbols-outlined text-[36px] mb-1">qr_code_scanner</span><span class="font-label-sm font-semibold">Product 6 Image - Click to view detail</span></div><div class="absolute top-3 left-3 flex flex-col gap-1"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm font-bold flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span> Verified Genuine</span><span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm w-fit font-medium">Verified</span></div><span class="absolute top-3 right-3 px-2 py-1 rounded bg-error text-on-error font-label-sm font-bold shadow-sm">10% OFF</span></a><div class="p-space-md flex-1 flex flex-col justify-between"><div><div class="flex items-center justify-between text-secondary font-label-sm mb-1"><div class="flex items-center gap-1 text-amber-500"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="font-bold text-on-surface">4.8</span><span class="text-outline font-normal">(77)</span></div><span class="text-primary font-semibold">SKU: GP-006</span></div><a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors cursor-pointer block" data-path="product-detail" href="product detail.html">Product 6</a><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">High quality genuine build with manufacturer warranty and authentic verification badge.</p></div><div class="mt-space-md pt-space-xs border-t border-outline-variant/30"><div class="flex items-baseline gap-2 mb-3"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">$42.00</span><span class="font-label-sm text-outline font-normal">Rs. 4,200</span><span class="font-label-sm text-outline line-through ml-auto">$48.00</span></div><div class="grid grid-cols-2 gap-2"><a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html"><span class="material-symbols-outlined text-[16px]">visibility</span> Gallery</a><a class="h-10 rounded-lg bg-[#25D366] text-white font-label-sm font-semibold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://wa.me/923224268147?text=Hello%2C%20I%20want%20to%20order%20Product%206%20(%2442.00%20%2F%20Rs.%204%2C200)" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp</a></div></div></div></div>
-<!-- Product 7 -->
-<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer" data-category="new-arrivals" onclick="if(!event.target.closest('a') &amp;&amp; !event.target.closest('button')) { window.location.href = 'product detail.html'; }"><a class="relative aspect-square bg-surface-container-low overflow-hidden cursor-pointer block" data-path="product-detail" href="product detail.html"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product 7 Image - Flat lay presentation of compact everyday item with precision engineering details, emerald accent elements on clean light grey backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj8amPBb66-C3Ni5FjWmKOhrfEb_NHLlWMQcl8OqBB0aA2_b_FqI0W18ZTDZcgET60-AIsCQLSbzrXhCFDNBXRfUYTFJqiLXFr0Eroo4EOsYdJpwzNHx3Dz3xvTqEJlpE-N300-HJt1P0RmDhvPIes2GC2RJdrfVbDCz3BfPEn3tg0CXmI3QXYKe9s5Z0-U_JIiSpyRsY6Bjt8iDVkIyJBBl3qJpqEInVzDl6n41s"><div class="absolute inset-0 bg-on-surface/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="material-symbols-outlined text-[36px] mb-1">loyalty</span><span class="font-label-sm font-semibold">Product 7 Image - Click to view detail</span></div><div class="absolute top-3 left-3 flex flex-col gap-1"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm font-bold flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span> Verified Genuine</span><span class="px-2 py-0.5 rounded-full bg-tertiary-container/30 text-on-surface font-label-sm w-fit font-bold">Special Offer</span></div><span class="absolute top-3 right-3 px-2 py-1 rounded bg-error text-on-error font-label-sm font-bold shadow-sm">30% OFF</span></a><div class="p-space-md flex-1 flex flex-col justify-between"><div><div class="flex items-center justify-between text-secondary font-label-sm mb-1"><div class="flex items-center gap-1 text-amber-500"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="font-bold text-on-surface">4.6</span><span class="text-outline font-normal">(52)</span></div><span class="text-primary font-semibold">SKU: GP-007</span></div><a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors cursor-pointer block" data-path="product-detail" href="product detail.html">Product 7</a><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">High quality genuine build with manufacturer warranty and authentic verification badge.</p></div><div class="mt-space-md pt-space-xs border-t border-outline-variant/30"><div class="flex items-baseline gap-2 mb-3"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">$19.99</span><span class="font-label-sm text-outline font-normal">Rs. 1,999</span><span class="font-label-sm text-outline line-through ml-auto">$28.99</span></div><div class="grid grid-cols-2 gap-2"><a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html"><span class="material-symbols-outlined text-[16px]">visibility</span> Gallery</a><a class="h-10 rounded-lg bg-[#25D366] text-white font-label-sm font-semibold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://wa.me/923224268147?text=Hello%2C%20I%20want%20to%20order%20Product%207%20(%2419.99%20%2F%20Rs.%201%2C999)" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp</a></div></div></div></div>
-<!-- Product 8 -->
-<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer" data-category="best-sellers" onclick="if(!event.target.closest('a') &amp;&amp; !event.target.closest('button')) { window.location.href = 'product detail.html'; }"><a class="relative aspect-square bg-surface-container-low overflow-hidden cursor-pointer block" data-path="product-detail" href="product detail.html"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product 8 Image - Elegant premium merchandise on geometric architectural block, subtle shadow, studio light, authentic gold seal stamp, 4k ultra realistic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGzrd4k1svsWP627wtCo3q5ihEhvYPhiO8xpZ2xgBMB2P7kN-9b8BzVkZ9dpItr50S3UBzd2d8YgM0PQU_rKI1vTzUGPrUMUIXZE4XpPyUAeIzeqHrqrJBg3O_KT05rudnmmukUMeZTLjhBDMJPN1FT60aIqM_DKVDF9klCi2tFfu4vs0zY8_Alo-_U52o-v0mcz57RvWju9uv7zvzfw5DKtvymeoj11hEb61DWbk"><div class="absolute inset-0 bg-on-surface/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="material-symbols-outlined text-[36px] mb-1">workspace_premium</span><span class="font-label-sm font-semibold">Product 8 Image - Click to view detail</span></div><div class="absolute top-3 left-3 flex flex-col gap-1"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm font-bold flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span> Verified Genuine</span><span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm w-fit font-bold">Authentic</span></div><span class="absolute top-3 right-3 px-2 py-1 rounded bg-error text-on-error font-label-sm font-bold shadow-sm">15% OFF</span></a><div class="p-space-md flex-1 flex flex-col justify-between"><div><div class="flex items-center justify-between text-secondary font-label-sm mb-1"><div class="flex items-center gap-1 text-amber-500"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="font-bold text-on-surface">4.9</span><span class="text-outline font-normal">(143)</span></div><span class="text-primary font-semibold">SKU: GP-008</span></div><a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors cursor-pointer block" data-path="product-detail" href="product detail.html">Product 8</a><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">High quality genuine build with manufacturer warranty and authentic verification badge.</p></div><div class="mt-space-md pt-space-xs border-t border-outline-variant/30"><div class="flex items-baseline gap-2 mb-3"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">$75.00</span><span class="font-label-sm text-outline font-normal">Rs. 7,500</span><span class="font-label-sm text-outline line-through ml-auto">$89.00</span></div><div class="grid grid-cols-2 gap-2"><a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html"><span class="material-symbols-outlined text-[16px]">visibility</span> Gallery</a><a class="h-10 rounded-lg bg-[#25D366] text-white font-label-sm font-semibold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://wa.me/923224268147?text=Hello%2C%20I%20want%20to%20order%20Product%208%20(%2475.00%20%2F%20Rs.%207%2C500)" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp</a></div></div></div></div>
-<!-- Product 9 -->
-<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer" data-category="new-arrivals trending" onclick="if(!event.target.closest('a') &amp;&amp; !event.target.closest('button')) { window.location.href = 'product detail.html'; }"><a class="relative aspect-square bg-surface-container-low overflow-hidden cursor-pointer block" data-path="product-detail" href="product detail.html"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product 9 Image - High-end modern smart product positioned neatly against a clean gradient background with authentic original barcode and serial tag visible" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHiv--T-di9nA4su55m1B8GZZQx3v8wrgYMGnavCgYHCtzuASdLsxOXdsOYFOjJX8QNboVG7lJkCWqx6dc0kEzcr8pa0QvfwHrrJZ8oZhTYwZk-7XlK-4kSrT3QR1riljAJC1_6s5WgaQn4V6OzwGGYDh2NhoMtfTd5wagdsvdyrRMDkUHbLiKqfObA6X_vHCPI6h0fzS9Tn5B0poBvTZuVin2gZRQSlgxGVLdyIE"><div class="absolute inset-0 bg-on-surface/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="material-symbols-outlined text-[36px] mb-1">new_releases</span><span class="font-label-sm font-semibold">Product 9 Image - Click to view detail</span></div><div class="absolute top-3 left-3 flex flex-col gap-1"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm font-bold flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span> Verified Genuine</span><span class="px-2 py-0.5 rounded-full bg-primary/20 text-on-surface font-label-sm w-fit font-bold">New Arrival</span></div><span class="absolute top-3 right-3 px-2 py-1 rounded bg-error text-on-error font-label-sm font-bold shadow-sm">12% OFF</span></a><div class="p-space-md flex-1 flex flex-col justify-between"><div><div class="flex items-center justify-between text-secondary font-label-sm mb-1"><div class="flex items-center gap-1 text-amber-500"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="font-bold text-on-surface">4.8</span><span class="text-outline font-normal">(88)</span></div><span class="text-primary font-semibold">SKU: GP-009</span></div><a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors cursor-pointer block" data-path="product-detail" href="product detail.html">Product 9</a><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">High quality genuine build with manufacturer warranty and authentic verification badge.</p></div><div class="mt-space-md pt-space-xs border-t border-outline-variant/30"><div class="flex items-baseline gap-2 mb-3"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">$64.00</span><span class="font-label-sm text-outline font-normal">Rs. 6,400</span><span class="font-label-sm text-outline line-through ml-auto">$72.00</span></div><div class="grid grid-cols-2 gap-2"><a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html"><span class="material-symbols-outlined text-[16px]">visibility</span> Gallery</a><a class="h-10 rounded-lg bg-[#25D366] text-white font-label-sm font-semibold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://wa.me/923224268147?text=Hello%2C%20I%20want%20to%20order%20Product%209%20(%2464.00%20%2F%20Rs.%206%2C400)" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp</a></div></div></div></div>
-<!-- Product 10 -->
-<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer" data-category="best-sellers trending" onclick="if(!event.target.closest('a') &amp;&amp; !event.target.closest('button')) { window.location.href = 'product detail.html'; }"><a class="relative aspect-square bg-surface-container-low overflow-hidden cursor-pointer block" data-path="product-detail" href="product detail.html"><img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Product 10 Image - Luxury flagship product displayed on dark glass surface with soft reflection, pristine craftsmanship, authentic holographic warranty security seal" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWHsWUAM75kj7guTpcpaREuYTeQ51uPPyVGohsHMWX4SNfk7cdLhlhtsjXaD51dBNIYAhx5WjIpW5JdQ2KGzppv-w4kIanGNy7AE7Ps1quaDEMySB_MoKF5j0UXFZtLFn7UfqC96Egf6Gmwdjzl2JA7smCOqFAVT4gQqHzz8VjgzRr8ZIG227YkdLKNzyXNPQdp_hxtFdfL3_OnOemACA5drLkhbw8p13_5r9hGf8"><div class="absolute inset-0 bg-on-surface/30 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white p-4 text-center"><span class="material-symbols-outlined text-[36px] mb-1">diamond</span><span class="font-label-sm font-semibold">Product 10 Image - Click to view detail</span></div><div class="absolute top-3 left-3 flex flex-col gap-1"><span class="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-label-sm font-bold flex items-center gap-1 shadow-sm"><span class="material-symbols-outlined text-[13px] text-emerald-600">verified</span> Verified Genuine</span><span class="px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 font-label-sm w-fit font-bold">Premium Pick</span></div><span class="absolute top-3 right-3 px-2 py-1 rounded bg-error text-on-error font-label-sm font-bold shadow-sm">20% OFF</span></a><div class="p-space-md flex-1 flex flex-col justify-between"><div><div class="flex items-center justify-between text-secondary font-label-sm mb-1"><div class="flex items-center gap-1 text-amber-500"><span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span><span class="font-bold text-on-surface">5.0</span><span class="text-outline font-normal">(312)</span></div><span class="text-primary font-semibold">SKU: GP-010</span></div><a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors cursor-pointer block" data-path="product-detail" href="product detail.html">Product 10</a><p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mt-1">High quality genuine build with manufacturer warranty and authentic verification badge.</p></div><div class="mt-space-md pt-space-xs border-t border-outline-variant/30"><div class="flex items-baseline gap-2 mb-3"><span class="font-headline-sm text-headline-sm text-on-surface font-bold">$110.00</span><span class="font-label-sm text-outline font-normal">Rs. 11,000</span><span class="font-label-sm text-outline line-through ml-auto">$138.00</span></div><div class="grid grid-cols-2 gap-2"><a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html"><span class="material-symbols-outlined text-[16px]">visibility</span> Gallery</a><a class="h-10 rounded-lg bg-[#25D366] text-white font-label-sm font-semibold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-1 shadow-sm" href="https://wa.me/923224268147?text=Hello%2C%20I%20want%20to%20order%20Product%2010%20(%24110.00%20%2F%20Rs.%2011%2C000)" target="_blank"><span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp</a></div></div></div></div>
 </div>
 <p aria-live="polite" class="hidden mt-space-lg text-center font-body-md text-on-surface-variant" id="noSearchResults">No products match your search or filters.</p>
 </section>
@@ -225,7 +208,7 @@
 <span class="material-symbols-outlined text-[18px]">verified_user</span> Uncompromising Authenticity
       </div>
 <h2 class="font-headline-lg text-headline-lg text-on-surface">Why Shop With Genuine Products?</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mt-2">Every parcel shipped goes through strict 3-stage authenticity check before leaving our warehouse.</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Welcome to Genuine Products, your trusted destination for authentic quality! In a world full of choices, we stand out by guaranteeing that every item you purchase is exactly as it's described. We meticulously source our products, ensuring you receive genuine, high-quality goods every time. No compromises, no imitations – just pure quality. Shopping with us means peace of mind, knowing you're investing in products that are built to last and deliver on their promise. Experience the difference that true authenticity makes, backed by our commitment to your satisfaction and excellent customer service. Discover value without compromise, only at Genuine Products.</p>
 </div>
 <!-- Trust Columns -->
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-space-xl">
@@ -380,9 +363,9 @@
 </div>
 </div>
 <div class="flex flex-col gap-2 pt-2">
-<a class="h-12 rounded-lg bg-[#25D366] text-white font-label-lg font-bold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-2 shadow-md" href="#" id="modalWhatsAppBtn" target="_blank">
+<button class="h-12 rounded-lg bg-[#25D366] text-white font-label-lg font-bold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-2 shadow-md" id="modalWhatsAppBtn" type="button">
 <span class="material-symbols-outlined text-[22px]">chat</span> Order Now via WhatsApp (+923224268147)
-            </a>
+            </button>
 <button class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors" onclick="closeProductDetail()">
               Continue Browsing
             </button>
@@ -394,10 +377,36 @@
 <!-- Floating WhatsApp Order Button -->
 <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
 <!-- Main Floating WhatsApp Button -->
-<a id="floatingWhatsAppBtn" aria-label="Order on WhatsApp" class="group flex items-center gap-2.5 px-4 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105" href="https://wa.me/923224268147?text=Hello%20Genuine%20Products%2C%20I%20would%20like%20to%20place%20a%20quick%20order." target="_blank">
+<button id="floatingWhatsAppBtn" aria-label="Order on WhatsApp" class="group flex items-center gap-2.5 px-4 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105 border-0 cursor-pointer" type="button">
 <span class="material-symbols-outlined text-[28px]">chat</span>
 <span class="font-label-lg font-bold pr-1 hidden sm:inline">Order via WhatsApp</span>
-</a>
+</button>
+</div>
+<div id="waOrderModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 p-4">
+  <div class="w-full max-w-md rounded-2xl bg-white p-5 shadow-2xl">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="font-headline-sm text-on-surface">Quick Order</h3>
+      <button type="button" class="text-on-surface-variant" aria-label="Close order form" onclick="closeWhatsAppOrderForm()">✕</button>
+    </div>
+    <form id="waOrderForm" class="space-y-4">
+      <input id="waProductName" type="hidden" value="Genuine Products">
+      <div>
+        <label for="waCustomerName" class="block font-label-md text-on-surface mb-1">Name *</label>
+        <input id="waCustomerName" type="text" required class="w-full rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2 text-on-surface" placeholder="Enter your full name" />
+      </div>
+      <div>
+        <label for="waCustomerPhone" class="block font-label-md text-on-surface mb-1">Phone Number *</label>
+        <input id="waCustomerPhone" type="tel" required class="w-full rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2 text-on-surface" placeholder="03xx xxxxxxx" />
+      </div>
+      <div>
+        <label for="waCustomerCity" class="block font-label-md text-on-surface mb-1">City (optional)</label>
+        <input id="waCustomerCity" type="text" class="w-full rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2 text-on-surface" placeholder="e.g. Lahore" />
+      </div>
+      <button type="submit" class="w-full h-12 rounded-lg bg-[#25D366] text-white font-label-lg font-bold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-[22px]">chat</span> Send on WhatsApp
+      </button>
+    </form>
+  </div>
 </div>
 <!-- Inline Script for Interactive Catalog Filters & Lightbox modal -->
 <script>
@@ -508,6 +517,26 @@
       document.getElementById('mobileSearchButton').focus();
     }
 
+    function openWhatsAppOrderForm(productName) {
+      const modal = document.getElementById('waOrderModal');
+      const hiddenProduct = document.getElementById('waProductName');
+      hiddenProduct.value = productName || 'Genuine Products';
+      document.getElementById('waCustomerName').value = '';
+      document.getElementById('waCustomerPhone').value = '';
+      document.getElementById('waCustomerCity').value = '';
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      setTimeout(() => document.getElementById('waCustomerName').focus(), 100);
+    }
+
+    function closeWhatsAppOrderForm() {
+      const modal = document.getElementById('waOrderModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = 'auto';
+    }
+
     function openProductDetail(title, price, rating, badge, desc) {
       const modal = document.getElementById('productDetailModal');
       document.getElementById('modalTitle').textContent = title;
@@ -516,10 +545,7 @@
       document.getElementById('modalBadge').textContent = badge;
       document.getElementById('modalDescription').textContent = desc;
       document.getElementById('modalImgLabel').textContent = title + ' - Replace with your image';
-      
-      const cleanPhone = '923224268147';
-      const waUrl = 'https://wa.me/' + cleanPhone + '?text=' + encodeURIComponent('Hi Genuine Products, I would like to order ' + title + ' (' + price + '). Please confirm availability and COD delivery.');
-      document.getElementById('modalWhatsAppBtn').setAttribute('href', waUrl);
+      document.getElementById('modalWhatsAppBtn').onclick = () => openWhatsAppOrderForm(title);
 
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
@@ -533,22 +559,55 @@
 
     window.addEventListener('click', function(e) {
       const modal = document.getElementById('productDetailModal');
+      const waModal = document.getElementById('waOrderModal');
       if (e.target === modal) {
         closeProductDetail();
       }
+      if (e.target === waModal) {
+        closeWhatsAppOrderForm();
+      }
+    });
+
+    document.getElementById('waOrderForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('waCustomerName').value.trim();
+      const phone = document.getElementById('waCustomerPhone').value.trim();
+      const city = document.getElementById('waCustomerCity').value.trim();
+      const product = document.getElementById('waProductName').value.trim();
+
+      if (!name) {
+        alert('Please enter your name.');
+        document.getElementById('waCustomerName').focus();
+        return;
+      }
+
+      if (!phone) {
+        alert('Please enter your phone number.');
+        document.getElementById('waCustomerPhone').focus();
+        return;
+      }
+
+      const message = `Hello Genuine Products, I would like to order *${product}*. My name is *${name}*. My phone number is *${phone}*. ${city ? 'City: *' + city + '*.' : ''} Please confirm availability and delivery details.`;
+      const waUrl = 'https://wa.me/923224268147?text=' + encodeURIComponent(message);
+      window.open(waUrl, '_blank');
+      closeWhatsAppOrderForm();
+    });
+
+    document.getElementById('floatingWhatsAppBtn').addEventListener('click', function() {
+      openWhatsAppOrderForm('Genuine Products');
+    });
+
+    document.addEventListener('click', function(event) {
+      const link = event.target.closest('a[href*="wa.me"]');
+      if (!link) return;
+      event.preventDefault();
+      const title = link.closest('.product-item')?.querySelector('a.font-title-md');
+      openWhatsAppOrderForm(link.dataset.productName || title?.textContent.trim() || 'Genuine Products');
     });
 
     const productDescriptions = [
       'Portable, rechargeable nebulizer with a carrying case.',
-      'Meter kit shown with case, lancing device, test strips and lancets.',
-      'Audio accessory shown on a minimal stone pedestal.',
-      'Lifestyle accessory photographed on a marble counter.',
-      'Ergonomic tech tool shown on a wooden surface.',
-      'Product shown with packaging on a metallic tray.',
-      'Compact everyday item shown in a flat lay.',
-      'Product displayed on a geometric presentation block.',
-      'Modern smart product shown against a clean background.',
-      'Product displayed on a dark glass surface.'
+      'Meter kit shown with case, lancing device, test strips and lancets.'
     ];
 
     function productDetailUrl(card) {
@@ -578,6 +637,34 @@
       card.querySelectorAll('a[data-path="product-detail"]').forEach(link => {
         link.href = productDetailUrl(card);
       });
+
+      const title = card.querySelector('a.font-title-md');
+      const productName = title ? title.textContent.trim() : `Product ${index + 1}`;
+      let orderLink = card.querySelector('a[href*="wa.me"]');
+      if (!orderLink) {
+        const actionArea = card.querySelector('.border-t');
+        const detailLink = actionArea && actionArea.querySelector('a[data-path="product-detail"]');
+        if (actionArea && detailLink) {
+          const actionRow = document.createElement('div');
+          actionRow.className = 'grid grid-cols-2 gap-2';
+          detailLink.parentNode.replaceChild(actionRow, detailLink);
+          detailLink.className = 'h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1';
+          detailLink.innerHTML = '<span class="material-symbols-outlined text-[16px]">visibility</span> Details';
+          actionRow.appendChild(detailLink);
+
+          orderLink = document.createElement('a');
+          orderLink.className = 'h-10 rounded-lg bg-[#25D366] text-white font-label-sm font-semibold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-1 shadow-sm';
+          orderLink.innerHTML = '<span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp';
+          actionRow.appendChild(orderLink);
+        }
+      }
+      if (orderLink) {
+        orderLink.href = `https://wa.me/923224268147?text=${encodeURIComponent(`Hello, I want to order ${productName}.`)}`;
+        orderLink.target = '_blank';
+        orderLink.rel = 'noopener noreferrer';
+        orderLink.dataset.productName = productName;
+      }
+
       card.onclick = function(event) {
         if (!event.target.closest('a') && !event.target.closest('button')) {
           window.location.href = productDetailUrl(card);

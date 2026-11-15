@@ -87,32 +87,78 @@
         <div id="product-one-details">
           <h2>Features</h2>
           <ul>
-            <li>Portable design with built-in rechargeable battery</li>
-            <li>Virtually silent technology</li>
-            <li>Simple two-part design</li>
+            <li>Virtually Silent Technology: Enjoy a quiet and discreet respiratory treatment experience.</li>
+            <li>Quick Treatments: Delivers medication effectively in just 4 minutes*.</li>
+            <li>Simple Design: Consists of only 2 main parts for easy assembly and cleaning.</li>
+            <li>Built-in Rechargeable Battery: Offers freedom from cords during treatment and on-the-go.</li>
+            <li>Portable and Lightweight: Designed for use anywhere, anytime.</li>
+            <li>Made in Mexico: Manufactured with quality and care.</li>
+            <li>Trusted Philips Brand: A reliable name in healthcare solutions.</li>
           </ul>
-          <p class="note">Shown claim: 2.5 ml salbutamol delivered in 4 minutes.</p>
 
-          <h2>Included</h2>
-          <p>Device, cord, mouthpiece and carrying case.</p>
-          <p>Cash on delivery available across Pakistan.</p>
+          <h2>Contents</h2>
+          <ul>
+            <li>Philips InnoSpire Go Nebulizer Device</li>
+            <li>Power charger with Cord (for charging)</li>
+            <li>Mouthpiece</li>
+            <li>Carrying Case</li>
+          </ul>
+          <p class="note">Cash on delivery available across Pakistan.</p>
         </div>
         <div id="product-two-details" hidden>
           <h2>Features</h2>
           <ul>
-            <li>No coding required</li>
-            <li>5-second results and 0.5 μL sample size</li>
-            <li>Strip ejection slider</li>
-            <li>Automatic test memory and ketone alert</li>
-            <li>20–600 mg/dL measuring range listed on the box</li>
+            <li>Accurate &amp; Fast Results: Get precise blood glucose readings in just 5 seconds.</li>
+            <li>Easy to Use: No coding required for hassle-free testing.</li>
+            <li>Tiny Sample Size: Requires only a tiny 0.5 µL blood sample.</li>
+            <li>Strip Ejection Slider: For hygienic and safe disposal of used test strips.</li>
+            <li>Automatic Test Memory: Stores previous readings for easy tracking.</li>
+            <li>Ketone Alert: Helps you stay informed about potential ketone levels.</li>
+            <li>Ergonomic Design: Small and comfortable to hold for ease of use.</li>
+            <li>Alternate Site Testing: Allows for testing on areas other than fingertips.</li>
+            <li>Wide Measuring Range: Measures blood glucose from 20-600mg/dl.</li>
+            <li>ISO 15197 Certified: Meets international standards for quality and accuracy.</li>
+            <li>Lifetime Warranty: We stand by the quality of our product.</li>
           </ul>
-          <h2>Included</h2>
-          <p>Meter, lancing device, carrying case, test strips, lancets, CR2032 3V battery and user guide, as shown in the photos.</p>
+          <h2>Packing Includes</h2>
+          <ul>
+            <li>True Check Blood Glucose Meter</li>
+            <li>Lancing Device</li>
+            <li>Carrying Case</li>
+            <li>Instruction Manual</li>
+            <li>Test Strips: 5 pcs</li>
+            <li>Lancets: 10 pcs</li>
+            <li>Battery</li>
+          </ul>
         </div>
-        <a class="order" id="order-link" href="https://wa.me/923224268147?text=Hello%2C%20I%20would%20like%20to%20order%20the%20Philips%20InnoSpire%20Go%20Portable%20Mesh%20Nebulizer." target="_blank" rel="noopener noreferrer">Order via WhatsApp</a>
+        <button class="order" id="order-link" type="button">Order via WhatsApp</button>
       </section>
     </div>
   </main>
+  <div id="waOrderModal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);padding:1rem;z-index:1000;">
+    <div style="width:min(100%, 28rem); background:white; border-radius:1rem; padding:1.25rem; box-shadow:0 20px 50px rgba(0,0,0,0.18);">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+        <h3 style="margin:0;font-size:1.2rem;">Quick Order</h3>
+        <button type="button" aria-label="Close order form" onclick="closeWhatsAppOrderForm()" style="border:none;background:none;cursor:pointer;font-size:1.2rem;">✕</button>
+      </div>
+      <form id="waOrderForm" style="display:grid;gap:1rem;">
+        <input id="waProductName" type="hidden" value="Philips InnoSpire Go Portable Mesh Nebulizer" />
+        <div>
+          <label for="waCustomerName" style="display:block;margin-bottom:0.35rem;font-weight:700;">Name *</label>
+          <input id="waCustomerName" type="text" required placeholder="Enter your full name" style="width:100%;padding:0.75rem;border:1px solid #d7dfe5;border-radius:0.75rem;" />
+        </div>
+        <div>
+          <label for="waCustomerPhone" style="display:block;margin-bottom:0.35rem;font-weight:700;">Phone Number *</label>
+          <input id="waCustomerPhone" type="tel" required placeholder="03xx xxxxxxx" style="width:100%;padding:0.75rem;border:1px solid #d7dfe5;border-radius:0.75rem;" />
+        </div>
+        <div>
+          <label for="waCustomerCity" style="display:block;margin-bottom:0.35rem;font-weight:700;">City (optional)</label>
+          <input id="waCustomerCity" type="text" placeholder="e.g. Lahore" style="width:100%;padding:0.75rem;border:1px solid #d7dfe5;border-radius:0.75rem;" />
+        </div>
+        <button type="submit" style="display:inline-flex;align-items:center;justify-content:center;gap:0.5rem;background:#16883f;color:white;border:none;border-radius:0.75rem;padding:0.9rem 1rem;font-weight:700;cursor:pointer;">Send on WhatsApp</button>
+      </form>
+    </div>
+  </div>
   <script>
     const productImages = [
       ["Redesign_original_picture_4K_202607221439 (1).jpeg", "Mother and child using the nebulizer"],
@@ -147,6 +193,51 @@
     const gallery = document.getElementById("gallery");
     const productParams = new URLSearchParams(window.location.search);
     const selectedProduct = Number(productParams.get("product"));
+
+    function openWhatsAppOrderForm(productName) {
+      const modal = document.getElementById('waOrderModal');
+      const productInput = document.getElementById('waProductName');
+      productInput.value = productName || 'Genuine Products';
+      document.getElementById('waCustomerName').value = '';
+      document.getElementById('waCustomerPhone').value = '';
+      document.getElementById('waCustomerCity').value = '';
+      modal.style.display = 'flex';
+      setTimeout(() => document.getElementById('waCustomerName').focus(), 100);
+    }
+
+    function closeWhatsAppOrderForm() {
+      document.getElementById('waOrderModal').style.display = 'none';
+    }
+
+    document.getElementById('waOrderForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = document.getElementById('waCustomerName').value.trim();
+      const phone = document.getElementById('waCustomerPhone').value.trim();
+      const city = document.getElementById('waCustomerCity').value.trim();
+      const product = document.getElementById('waProductName').value.trim();
+
+      if (!name) {
+        alert('Please enter your name.');
+        document.getElementById('waCustomerName').focus();
+        return;
+      }
+
+      if (!phone) {
+        alert('Please enter your phone number.');
+        document.getElementById('waCustomerPhone').focus();
+        return;
+      }
+
+      const message = `Hello Genuine Products, I would like to order *${product}*. My name is *${name}*. My phone number is *${phone}*. ${city ? 'City: *' + city + '*.' : ''} Please confirm availability and delivery details.`;
+      const waUrl = 'https://wa.me/923224268147?text=' + encodeURIComponent(message);
+      window.open(waUrl, '_blank');
+      closeWhatsAppOrderForm();
+    });
+
+    document.getElementById('order-link').addEventListener('click', function() {
+      const productName = document.getElementById('product-title').textContent.trim();
+      openWhatsAppOrderForm(productName);
+    });
 
     function renderGallery(images, folder) {
       images.forEach(([file, description], index) => {
@@ -186,9 +277,7 @@
       document.getElementById("product-description").textContent = description;
       document.getElementById("product-one-details").hidden = true;
 
-      const message = `Hello, I would like to order ${title} for ${price}${usdPrice ? ` (${usdPrice})` : ""}.`;
-      document.getElementById("order-link").href =
-        `https://wa.me/923224268147?text=${encodeURIComponent(message)}`;
+      document.getElementById("waProductName").value = title;
       document.getElementById("order-link").textContent = `Order ${title} via WhatsApp`;
 
       if (selectedProduct === 2) {
