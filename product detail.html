@@ -280,11 +280,14 @@
       document.getElementById("waProductName").value = title;
       document.getElementById("order-link").textContent = `Order ${title} via WhatsApp`;
 
-      if (selectedProduct === 2) {
+      if (selectedProduct === 2 || selectedProduct === 3) {
         const firstImage = glucometerImages[0];
         mainImage.src = `pics of glucometer/${firstImage[0]}`;
         mainImage.alt = firstImage[1];
         document.getElementById("product-two-details").hidden = false;
+        if (selectedProduct === 3) {
+          document.querySelector("#product-two-details ul:last-of-type li:nth-child(5)").textContent = "Test Strips: 50 pcs";
+        }
         renderGallery(glucometerImages, "pics of glucometer");
       } else {
         mainImage.src = image;
