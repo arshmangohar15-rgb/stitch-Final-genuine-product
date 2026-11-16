@@ -244,7 +244,7 @@ header > div:nth-child(3) {
 </div>
 <!-- Filter Controls -->
 <div class="flex items-center gap-2 overflow-x-auto pb-1" id="filterBar">
-<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (2)</button>
+<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (4)</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="trending" onclick="filterCatalog('trending')">Trending</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="best-sellers" onclick="filterCatalog('best-sellers')">Best Sellers</button>
 </div>
@@ -295,6 +295,22 @@ header > div:nth-child(3) {
 </div>
 <div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
 <div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs. 2,499</div>
+<a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html">View product photos and details</a>
+</div>
+</div>
+</div>
+<!-- Product 4 -->
+<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="best-sellers">
+<a class="relative aspect-square bg-surface-container-low overflow-hidden block" data-path="product-detail" href="product detail.html">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="TRUE CHECK 50-count blood glucose test strips" src="pics of glucometer/glucometer (15).jpg">
+</a>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors block" data-path="product-detail" href="product detail.html">TRUE CHECK Blood Glucose Test Strips - 50 Count</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">50 test strips for use with a compatible TRUE CHECK blood glucose meter. Meter and lancets are not included.</p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs. 1,999</div>
 <a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html">View product photos and details</a>
 </div>
 </div>
@@ -774,7 +790,8 @@ header > div:nth-child(3) {
     const productDescriptions = [
       'Portable, rechargeable nebulizer with a carrying case.',
       'Meter kit shown with case, lancing device, test strips and lancets.',
-      'TRUE CHECK meter kit with case, lancing device, 50 test strips and lancets.'
+      'TRUE CHECK meter kit with case, lancing device, 50 test strips and lancets.',
+      '50 test strips for use with a compatible TRUE CHECK blood glucose meter. Meter and lancets are not included.'
     ];
 
     function productDetailUrl(card) {

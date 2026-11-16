@@ -48,6 +48,7 @@
     .gallery img { display: block; width: 100%; height: 100%; object-fit: cover; }
     #product-one-details[hidden] { display: none; }
     #product-two-details[hidden] { display: none; }
+    #product-four-details[hidden] { display: none; }
     h1 { margin: 8px 0 12px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; }
     .price { margin: 0 0 22px; color: #805b12; font-size: 24px; font-weight: 700; }
     h2 { margin: 24px 0 10px; font-size: 18px; }
@@ -129,6 +130,15 @@
             <li>Test Strips: 5 pcs</li>
             <li>Lancets: 10 pcs</li>
             <li>Battery</li>
+          </ul>
+        </div>
+        <div id="product-four-details" hidden>
+          <h2>Product details</h2>
+          <ul>
+            <li>Pack size: 50 TRUE CHECK blood glucose test strips, as shown on the supplied packaging.</li>
+            <li>For use with a compatible TRUE CHECK blood glucose meter. Check that the strips match your meter model.</li>
+            <li>Test strips only; the meter, lancing device, and lancets are not included.</li>
+            <li>Follow the storage and testing instructions printed on the strip vial and meter manual.</li>
           </ul>
         </div>
         <button class="order" id="order-link" type="button">Order via WhatsApp</button>
@@ -289,6 +299,12 @@
           document.querySelector("#product-two-details ul:last-of-type li:nth-child(5)").textContent = "Test Strips: 50 pcs";
         }
         renderGallery(glucometerImages, "pics of glucometer");
+      } else if (selectedProduct === 4) {
+        const stripsImage = glucometerImages[7];
+        mainImage.src = `pics of glucometer/${stripsImage[0]}`;
+        mainImage.alt = stripsImage[1];
+        document.getElementById("product-four-details").hidden = false;
+        renderGallery([stripsImage], "pics of glucometer");
       } else {
         mainImage.src = image;
         mainImage.alt = alt;
