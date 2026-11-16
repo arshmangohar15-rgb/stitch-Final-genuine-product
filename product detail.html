@@ -333,16 +333,16 @@
         document.getElementById("product-four-details").hidden = false;
         renderGallery([stripsImage], "pics of glucometer");
       } else if (selectedProduct === 5) {
-        const greenImage = "file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/38e6832b-ac79-4b37-9de8-ec8c211ebaef/Change_pink_to_green_202607211844.jpeg";
-        const pinkImage = "file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/f6052fa8-43b7-428a-b532-37d6853381a9/Pink_knifeset_like_greenset_design_202607211846.jpeg";
+        const greenImage = "Change_pink_to_green_202607211844.jpeg";
+        const pinkImage = "Pink_knifeset_like_greenset_design_202607211846.jpeg";
         const knifeImages = [
           [greenImage, "EasyRich green kitchen knife set"],
           [pinkImage, "EasyRich pink kitchen knife set"],
-          ["file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/42180b73-96b0-4391-a653-955148174a51/make_it_again_202607202035 (1).jpeg", "Kitchen knife set on a cutting board"],
-          ["file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/2a4d0851-0cb7-4f30-8827-899a5a42548d/show_only_one_peeler_202607211840.jpeg", "Peeler and knife detail"],
-          ["file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/38e6832b-ac79-4b37-9de8-ec8c211ebaef/Change_pink_to_green_202607211844.jpeg", "Close-up of the green knife set"]
+          ["make_it_again_202607202035 (1).jpeg", "Kitchen knife set on a cutting board"],
+          ["show_only_one_peeler_202607211840.jpeg", "Peeler and knife detail"],
+          ["Change_pink_to_green_202607211844.jpeg", "Close-up of the green knife set"]
         ];
-        mainImage.src = greenImage;
+        mainImage.src = `knifeset pics/${greenImage}`;
         mainImage.alt = "EasyRich green kitchen knife set";
         document.getElementById("product-two-details").hidden = false;
         document.getElementById("product-one-details").hidden = true;
@@ -365,7 +365,7 @@
           <li>1 Kitchen Scissors</li>
           <li>1 Protective Storage Box</li>
         `;
-        renderGallery(knifeImages, "");
+        renderGallery(knifeImages, "knifeset pics");
       } else if (selectedProduct === 6) {
         const firstImage = lighterImages[0];
         mainImage.src = `lighter pics/${firstImage[0]}`;
