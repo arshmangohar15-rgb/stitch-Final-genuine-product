@@ -120,25 +120,33 @@ header > div:nth-child(3) {
 @media (max-width: 767px) {
   main#home { padding-top: 6rem !important; }
   header > div:nth-child(2) > div > div:first-child > a {
-    display: none !important;
+    display: inline !important;
+    max-width: 88px;
+    font-size: 12px !important;
+    line-height: 1.05;
+    white-space: normal;
   }
   header nav.header-main-navigation {
     justify-content: flex-start;
-    gap: 0.25rem;
+    gap: 2px !important;
   }
   header nav.header-main-navigation a {
-    padding: 0.45rem 0.55rem;
-    font-size: 11px;
+    padding: 0.4rem 0.25rem !important;
+    font-size: 10px !important;
   }
 }
 @media (max-width: 360px) {
   main#home { padding-top: 7rem !important; }
+  header > div:nth-child(2) > div > div:first-child > a {
+    max-width: 60px;
+    font-size: 11px !important;
+  }
   header nav.header-main-navigation a {
-    padding: 0.4rem 0.35rem !important;
-    font-size: 10px !important;
+    padding: 0.35rem 0.1rem !important;
+    font-size: 9px !important;
   }
   header nav.header-main-navigation {
-    gap: 3px !important;
+    gap: 1px !important;
   }
 }
 :root {
