@@ -251,7 +251,7 @@
 
     function renderGallery(images, folder) {
       images.forEach(([file, description], index) => {
-        const source = `${folder}/${file}`;
+        const source = /^https?:|^file:/.test(String(file)) ? String(file) : `${folder}/${file}`;
         const button = document.createElement("button");
         const thumbnail = document.createElement("img");
         button.type = "button";
@@ -305,6 +305,40 @@
         mainImage.alt = stripsImage[1];
         document.getElementById("product-four-details").hidden = false;
         renderGallery([stripsImage], "pics of glucometer");
+      } else if (selectedProduct === 5) {
+        const greenImage = "file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/38e6832b-ac79-4b37-9de8-ec8c211ebaef/Change_pink_to_green_202607211844.jpeg";
+        const pinkImage = "file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/f6052fa8-43b7-428a-b532-37d6853381a9/Pink_knifeset_like_greenset_design_202607211846.jpeg";
+        const knifeImages = [
+          [greenImage, "EasyRich green kitchen knife set"],
+          [pinkImage, "EasyRich pink kitchen knife set"],
+          ["file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/42180b73-96b0-4391-a653-955148174a51/make_it_again_202607202035 (1).jpeg", "Kitchen knife set on a cutting board"],
+          ["file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/2a4d0851-0cb7-4f30-8827-899a5a42548d/show_only_one_peeler_202607211840.jpeg", "Peeler and knife detail"],
+          ["file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/38e6832b-ac79-4b37-9de8-ec8c211ebaef/Change_pink_to_green_202607211844.jpeg", "Close-up of the green knife set"]
+        ];
+        mainImage.src = greenImage;
+        mainImage.alt = "EasyRich green kitchen knife set";
+        document.getElementById("product-two-details").hidden = false;
+        document.getElementById("product-one-details").hidden = true;
+        document.getElementById("product-four-details").hidden = true;
+        const featureList = document.querySelector("#product-two-details ul");
+        const packList = document.querySelector("#product-two-details ul:last-of-type");
+        featureList.innerHTML = `
+          <li>Premium 6-piece kitchen knife set with a sharp stainless-steel blade.</li>
+          <li>Comfortable ergonomic grip with anti-slip textured handle for easy cutting.</li>
+          <li>Available in 2 colours: Pink and Green for stylish kitchen décor.</li>
+          <li>Non-stick coating that supports easy cleaning and long-lasting performance.</li>
+          <li>Compact closed-box design makes storage neat and organised.</li>
+          <li>Imported from HongKong with modern lifestyle appeal.</li>
+        `;
+        packList.innerHTML = `
+          <li>1 Chef Knife</li>
+          <li>1 Utility Knife</li>
+          <li>1 Paring Knife</li>
+          <li>1 Peeler</li>
+          <li>1 Kitchen Scissors</li>
+          <li>1 Protective Storage Box</li>
+        `;
+        renderGallery(knifeImages, "");
       } else {
         mainImage.src = image;
         mainImage.alt = alt;

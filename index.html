@@ -244,7 +244,7 @@ header > div:nth-child(3) {
 </div>
 <!-- Filter Controls -->
 <div class="flex items-center gap-2 overflow-x-auto pb-1" id="filterBar">
-<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (4)</button>
+<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (5)</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="trending" onclick="filterCatalog('trending')">Trending</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="best-sellers" onclick="filterCatalog('best-sellers')">Best Sellers</button>
 </div>
@@ -311,6 +311,22 @@ header > div:nth-child(3) {
 </div>
 <div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
 <div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs. 1,999</div>
+<a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html">View product photos and details</a>
+</div>
+</div>
+</div>
+<!-- Product 5 -->
+<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="trending best-sellers">
+<a class="relative aspect-square bg-surface-container-low overflow-hidden block" data-path="product-detail" href="product detail.html">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="EasyRich 6-piece kitchen knife set in pink and green colours" src="file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/f6052fa8-43b7-428a-b532-37d6853381a9/Pink_knifeset_like_greenset_design_202607211846.jpeg">
+</a>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors block" data-path="product-detail" href="product detail.html">EasyRich 6-Piece Kitchen Knife Set - Pink &amp; Green, 2 Colours</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Premium stainless kitchen knife set with hygienic non-stick coating, imported from HongKong and available in two colours.</p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs 2999</div>
 <a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html">View product photos and details</a>
 </div>
 </div>
@@ -525,6 +541,16 @@ header > div:nth-child(3) {
     if (mobileSearchButton) mobileSearchButton.remove();
 
     const homeSliderImages = [
+      {
+        src: 'file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/0ee1a803-045d-4d75-aac2-c4ec464381bc/size_only_3aea5910.jpg',
+        alt: 'EasyRich green kitchen knife set banner',
+        productId: 5
+      },
+      {
+        src: 'file:///C:/Users/HP/AppData/Roaming/Code/agentSessionData/ff02988e-6838-4430-9562-e23f18eafade/attachments/f58b004c-77e2-46c2-851f-c469f397fc80/size_only_eb326296.jpg',
+        alt: 'EasyRich pink kitchen knife set banner',
+        productId: 5
+      },
       {
         src: 'banner/Remove_COD_alignment_white_circle_a3d680e0_2K.jpg',
         alt: 'Philips InnoSpire Go nebulizer banner',
@@ -791,7 +817,8 @@ header > div:nth-child(3) {
       'Portable, rechargeable nebulizer with a carrying case.',
       'Meter kit shown with case, lancing device, test strips and lancets.',
       'TRUE CHECK meter kit with case, lancing device, 50 test strips and lancets.',
-      '50 test strips for use with a compatible TRUE CHECK blood glucose meter. Meter and lancets are not included.'
+      '50 test strips for use with a compatible TRUE CHECK blood glucose meter. Meter and lancets are not included.',
+      'Premium stainless kitchen knife set with hygienic non-stick coating, imported from HongKong and available in two colours.'
     ];
 
     function productDetailUrl(card) {
