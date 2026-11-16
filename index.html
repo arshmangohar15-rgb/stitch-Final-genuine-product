@@ -98,7 +98,48 @@ header > div:nth-child(2) > div > div:last-child > div {
 }
 @media (min-width: 768px) {
   header > div:nth-child(2) { height: 96px !important; }
-  main#home { padding-top: 11rem !important; }
+  main#home { padding-top: 8rem !important; }
+}
+header nav.header-main-navigation {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: none;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0;
+}
+header nav.header-main-navigation a {
+  padding: 0.5rem 0.85rem;
+}
+header > div:nth-child(3) {
+  display: none !important;
+}
+#mobileSearchPanel {
+  display: none !important;
+}
+@media (max-width: 767px) {
+  main#home { padding-top: 6rem !important; }
+  header > div:nth-child(2) > div > div:first-child > a {
+    display: none !important;
+  }
+  header nav.header-main-navigation {
+    justify-content: flex-start;
+    gap: 0.25rem;
+  }
+  header nav.header-main-navigation a {
+    padding: 0.45rem 0.55rem;
+    font-size: 11px;
+  }
+}
+@media (max-width: 360px) {
+  main#home { padding-top: 7rem !important; }
+  header nav.header-main-navigation a {
+    padding: 0.4rem 0.35rem !important;
+    font-size: 10px !important;
+  }
+  header nav.header-main-navigation {
+    gap: 3px !important;
+  }
 }
 :root {
   --brand-blue: #163f6b;
@@ -445,6 +486,20 @@ header > div:nth-child(2) > div > div:last-child > div {
 </div>
 <!-- Inline Script for Interactive Catalog Filters & Lightbox modal -->
 <script>
+    const headerSearchSlot = document.querySelector('header > div:nth-child(2) > div > div:nth-child(2)');
+    const headerNavigation = document.querySelector('header nav[aria-label="Main navigation"]');
+    const oldNavigationRow = headerNavigation && headerNavigation.closest('div.bg-surface-container-low');
+    const mobileSearchPanel = document.getElementById('mobileSearchPanel');
+    const mobileSearchButton = document.getElementById('mobileSearchButton');
+    if (headerSearchSlot && headerNavigation) {
+      headerSearchSlot.replaceWith(headerNavigation);
+      headerNavigation.classList.add('header-main-navigation');
+      headerNavigation.classList.remove('py-2.5');
+      if (oldNavigationRow) oldNavigationRow.remove();
+    }
+    if (mobileSearchPanel) mobileSearchPanel.remove();
+    if (mobileSearchButton) mobileSearchButton.remove();
+
     const homeSliderImages = [
       {
         src: 'banner/Remove_COD_alignment_white_circle_a3d680e0_2K.jpg',
@@ -536,20 +591,6 @@ header > div:nth-child(2) > div > div:last-child > div {
 
       const emptyState = document.getElementById('noSearchResults');
       if (emptyState) emptyState.classList.toggle('hidden', visibleCount > 0);
-    }
-
-    function openMobileSearch() {
-      const panel = document.getElementById('mobileSearchPanel');
-      panel.classList.remove('hidden');
-      panel.setAttribute('aria-hidden', 'false');
-      document.getElementById('mobileProductSearch').focus();
-    }
-
-    function closeMobileSearch() {
-      const panel = document.getElementById('mobileSearchPanel');
-      panel.classList.add('hidden');
-      panel.setAttribute('aria-hidden', 'true');
-      document.getElementById('mobileSearchButton').focus();
     }
 
     function openWhatsAppOrderForm(productName) {
@@ -801,20 +842,6 @@ header > div:nth-child(2) > div > div:last-child > div {
       });
     });
 
-    document.getElementById('mobileProductSearch').addEventListener('keydown', event => {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        closeMobileSearch();
-        document.getElementById('catalog').scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-
-    document.addEventListener('keydown', event => {
-      const panel = document.getElementById('mobileSearchPanel');
-      if (event.key === 'Escape' && !panel.classList.contains('hidden')) {
-        closeMobileSearch();
-      }
-    });
   </script>
 </div></main><footer id="footer" class="w-full bg-surface-container-low mt-space-xl scroll-mt-40"><div class="max-w-7xl mx-auto px-gutter py-space-xl"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter mb-space-xl"><div><div class="flex items-center gap-space-sm mb-space-sm"><img alt="Genuine Products Logo" class="h-12 w-auto object-contain" src="logo/logo.jpg"><span class="font-headline-sm text-primary font-bold tracking-tight">Genuine Products</span></div><p class="font-body-sm text-on-surface-variant mb-space-md">Curated source for strictly authentic items with guaranteed quality control, rapid local dispatch, and transparent customer assistance.</p><div class="flex items-center gap-2 text-secondary font-label-md"><span class="material-symbols-outlined text-[18px]">verified_user</span><span>100% Authentic Product Guarantee</span></div></div><div><h4 class="font-title-md text-on-surface mb-space-md">Direct WhatsApp Support</h4><p class="font-body-sm text-on-surface-variant mb-space-sm">Need quick sizing advice or ready to place an instant WhatsApp order? Connect directly with our dispatch team.</p><div class="bg-surface-container p-space-sm rounded-lg flex items-center gap-space-sm mb-space-sm"><span class="material-symbols-outlined text-primary text-[24px]">chat</span><div><p class="font-label-sm text-on-surface-variant">Helpline (10 AM - 10 PM)</p><p class="font-title-md text-on-surface">+92 322 4268147</p></div></div><p class="font-label-sm text-outline">Average response time: &lt; 5 minutes</p></div><div><h4 class="font-title-md text-on-surface mb-space-md">Customer Service</h4><ul class="space-y-space-sm"><li class="font-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Track Your Parcel</li><li class="font-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Return &amp; Exchange Policy</li><li class="font-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Cash on Delivery Terms</li><li class="font-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Warranty &amp; Authenticity Verification</li><li class="font-body-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Contact Support</li></ul></div><div><h4 class="font-title-md text-on-surface mb-space-md">Payment &amp; Delivery</h4><div class="flex flex-wrap gap-2 mb-space-md"><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm">Cash on Delivery (COD)</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm">Bank Transfer</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm">Visa / Mastercard</span><span class="px-2.5 py-1 rounded bg-surface-container text-on-surface-variant font-label-sm">EasyPaisa / JazzCash</span></div><p class="font-label-sm text-on-surface-variant">All orders are inspected and tamper-sealed before courier dispatch.</p></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-outline"><p>© 2025 Genuine Products. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="hover:text-on-surface cursor-pointer">Privacy Policy</span><span class="hover:text-on-surface cursor-pointer">Terms of Service</span><span class="hover:text-on-surface cursor-pointer">Shipping Policy</span></div></div></div></footer>
 
