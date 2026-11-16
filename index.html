@@ -244,13 +244,13 @@ header > div:nth-child(3) {
 </div>
 <!-- Filter Controls -->
 <div class="flex items-center gap-2 overflow-x-auto pb-1" id="filterBar">
-<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (5)</button>
+<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (6)</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="trending" onclick="filterCatalog('trending')">Trending</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="best-sellers" onclick="filterCatalog('best-sellers')">Best Sellers</button>
 </div>
 </div>
 <!-- Product Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-gutter" id="productsContainer">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter" id="productsContainer">
 <!-- Product 1 -->
 <div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="trending best-sellers">
 <a class="relative aspect-square bg-surface-container-low overflow-hidden block" data-path="product-detail" href="product detail.html">
@@ -327,6 +327,22 @@ header > div:nth-child(3) {
 </div>
 <div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
 <div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs 2999</div>
+<a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html">View product photos and details</a>
+</div>
+</div>
+</div>
+<!-- Product 6 -->
+<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="trending best-sellers">
+<a class="relative aspect-square bg-surface-container-low overflow-hidden block" data-path="product-detail" href="product detail.html">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Rechargeable flexible-neck arc lighter with LED battery display" src="lighter pics/change_logo_2be0d4f8.jpg">
+</a>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors block" data-path="product-detail" href="product detail.html">Arc Lighter Rechargeable with Type-C Charging &amp; LED Display</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Flexible-neck electric arc lighter with rechargeable Type-C charging and an LED battery display.</p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs. 999</div>
 <a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html">View product photos and details</a>
 </div>
 </div>
@@ -818,7 +834,8 @@ header > div:nth-child(3) {
       'Meter kit shown with case, lancing device, test strips and lancets.',
       'TRUE CHECK meter kit with case, lancing device, 50 test strips and lancets.',
       '50 test strips for use with a compatible TRUE CHECK blood glucose meter. Meter and lancets are not included.',
-      'Premium stainless kitchen knife set with hygienic non-stick coating, imported from HongKong and available in two colours.'
+      'Premium stainless kitchen knife set with hygienic non-stick coating, imported from HongKong and available in two colours.',
+      'Rechargeable flexible-neck electric arc lighter with Type-C charging and an LED battery display.'
     ];
 
     function productDetailUrl(card) {
