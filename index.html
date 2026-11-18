@@ -150,27 +150,53 @@ header > div:nth-child(3) {
   }
 }
 :root {
-  --brand-blue: #163f6b;
-  --brand-gold: #b88724;
-  --brand-gold-text: #805b12;
+  --brand-blue: #b3132b;
+  --brand-gold: #d33a4b;
+  --brand-gold-text: #9c1830;
+  --brand-red-dark: #7d1024;
+  --brand-red-border: #efb8c0;
 }
 .bg-primary { background-color: var(--brand-blue) !important; }
 .text-primary { color: var(--brand-blue) !important; }
 .border-primary { border-color: var(--brand-blue) !important; }
-.bg-primary\/10 { background-color: rgb(22 63 107 / 10%) !important; }
-.bg-primary\/20 { background-color: rgb(22 63 107 / 20%) !important; }
+.bg-primary\/10 { background-color: rgb(179 19 43 / 10%) !important; }
+.bg-primary\/20 { background-color: rgb(179 19 43 / 20%) !important; }
 .hover\:bg-primary:hover { background-color: var(--brand-blue) !important; }
 .hover\:text-primary:hover { color: var(--brand-blue) !important; }
 .focus\:ring-primary:focus { --tw-ring-color: var(--brand-blue) !important; }
 .bg-secondary { background-color: var(--brand-gold) !important; }
 .text-secondary { color: var(--brand-gold-text) !important; }
-.bg-secondary\/10 { background-color: rgb(184 135 36 / 12%) !important; }
+.bg-secondary\/10 { background-color: rgb(211 58 75 / 12%) !important; }
 .bg-secondary-fixed { background-color: var(--brand-gold) !important; }
 .bg-secondary-fixed-dim { background-color: var(--brand-gold) !important; }
-.text-outline { color: #68788a !important; }
-.bg-gradient-to-r { background-image: linear-gradient(110deg, #163f6b, #234d77) !important; }
-.bg-emerald-50 { background-color: #f5eddc !important; }
+.bg-surface { background-color: #fff8f8 !important; }
+.bg-surface\/90 { background-color: rgb(255 248 248 / 90%) !important; }
+.bg-surface-container-low { background-color: #fff0f1 !important; }
+.bg-surface-container { background-color: #fbe2e5 !important; }
+.bg-surface-container-high { background-color: #f7d4d9 !important; }
+.bg-surface-container-highest { background-color: #f0c2c9 !important; }
+.bg-surface-container-lowest { background-color: #fffdfd !important; }
+.text-on-surface { color: #351018 !important; }
+.text-on-surface-variant { color: #70404a !important; }
+.text-outline { color: #8e5660 !important; }
+.border-outline-variant\/30 { border-color: rgb(179 19 43 / 24%) !important; }
+.bg-gradient-to-r { background-image: linear-gradient(110deg, #8b1025, #c21e38) !important; }
+.bg-emerald-50 { background-color: #fff0f1 !important; }
 .text-emerald-800 { color: var(--brand-gold-text) !important; }
+.text-amber-500 { color: #c52b42 !important; }
+body { background-color: #fff8f8 !important; }
+header, footer { border-color: var(--brand-red-border); }
+#productsContainer > .product-item {
+  border: 1px solid var(--brand-red-border);
+}
+#productsContainer > .product-item:hover {
+  box-shadow: 0 12px 28px rgb(125 16 36 / 16%);
+}
+#productsContainer > .product-item > a:first-child {
+  background-color: #fff0f1 !important;
+}
+.filter-tab { border: 1px solid var(--brand-red-border); }
+input:focus { --tw-ring-color: #b3132b !important; }
 #catalog { padding-block: 1.5rem !important; }
 #catalog > div:first-child { margin-bottom: 1rem; }
 #productsContainer { gap: 1rem; }
@@ -221,47 +247,6 @@ header > div:nth-child(3) {
 <button aria-label="Show image 2" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(1)" type="button"></button>
 <button aria-label="Show image 3" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(2)" type="button"></button>
 <button aria-label="Show image 4" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(3)" type="button"></button>
-</div>
-</div>
-</section>
-<!-- 4-Pillar Value Proposition Strip -->
-<section class="w-full max-w-7xl mx-auto px-gutter pb-space-lg">
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-space-sm">
-<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[26px]">verified</span>
-</div>
-<div>
-<h2 class="font-title-md text-title-md text-on-surface">100% Original</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Sourced straight from certified vendors with serial tracing.</p>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-space-sm">
-<div class="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[26px]">bolt</span>
-</div>
-<div>
-<h2 class="font-title-md text-title-md text-on-surface">Express Delivery</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Dispatched within 24 hours via premier courier tracking.</p>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-space-sm">
-<div class="w-12 h-12 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[26px]">shield_lock</span>
-</div>
-<div>
-<h2 class="font-title-md text-title-md text-on-surface">Safe Packaging</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Multi-layer bubble and tamper-evident certified box seal.</p>
-</div>
-</div>
-<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-space-sm">
-<div class="w-12 h-12 rounded-lg bg-[#25D366]/15 text-[#25D366] flex items-center justify-center shrink-0">
-<span class="material-symbols-outlined text-[26px]">chat_bubble</span>
-</div>
-<div>
-<h2 class="font-title-md text-title-md text-on-surface">Instant WhatsApp</h2>
-<p class="font-body-sm text-body-sm text-on-surface-variant">No tedious checkout. Order directly with human reps.</p>
-</div>
 </div>
 </div>
 </section>
@@ -383,6 +368,47 @@ header > div:nth-child(3) {
 </div>
 </div>
 <p aria-live="polite" class="hidden mt-space-lg text-center font-body-md text-on-surface-variant" id="noSearchResults">No products match your search or filters.</p>
+</section>
+<!-- 4-Pillar Value Proposition Strip -->
+<section class="w-full max-w-7xl mx-auto px-gutter pb-space-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">verified</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">100% Original</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sourced straight from certified vendors with serial tracing.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">bolt</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Express Delivery</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Dispatched within 24 hours via premier courier tracking.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">shield_lock</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Safe Packaging</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Multi-layer bubble and tamper-evident certified box seal.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm hover:shadow-md transition-shadow flex items-start gap-space-sm">
+<div class="w-12 h-12 rounded-lg bg-[#25D366]/15 text-[#25D366] flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[26px]">chat_bubble</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Instant WhatsApp</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">No tedious checkout. Order directly with human reps.</p>
+</div>
+</div>
+</div>
 </section>
 <!-- Interactive WhatsApp Fast-Order Step Guide -->
 <section class="w-full max-w-7xl mx-auto px-gutter py-space-lg">
