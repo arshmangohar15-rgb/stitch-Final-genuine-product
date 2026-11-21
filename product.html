@@ -119,6 +119,7 @@
     #product-two-details[hidden] { display: none; }
     #product-lighter-details[hidden] { display: none; }
     #product-four-details[hidden] { display: none; }
+    #product-thermometer-details[hidden] { display: none; }
     h1 { margin: 8px 0 12px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; }
     .price { margin: 0 0 22px; color: #b3132b; font-size: 24px; font-weight: 700; }
     h2 { margin: 24px 0 10px; color: #8d1429; font-size: 18px; }
@@ -283,6 +284,24 @@
           </ul>
           <p class="note">Cash on delivery available across Pakistan.</p>
         </div>
+        <div id="product-thermometer-details" hidden>
+          <h2>Features</h2>
+          <ul>
+            <li>Non-contact infrared measurement helps prevent cross infection.</li>
+            <li>Complete temperature measurement in approximately 2 seconds.</li>
+            <li>Clear digital display with a simple, ergonomic design.</li>
+            <li>Suitable for checking adults and children when used as directed.</li>
+            <li>Memory and mode controls support convenient repeat measurements.</li>
+          </ul>
+          <h2>Contents</h2>
+          <ul>
+            <li>Besiter Infrared Forehead Thermometer</li>
+            <li>Original retail packaging</li>
+            <li>Instruction manual</li>
+            <li>Batteries, subject to the supplied package</li>
+          </ul>
+          <p class="note">Cash on delivery available across Pakistan.</p>
+        </div>
       </section>
     </div>
   </main>
@@ -348,6 +367,12 @@
       ["change_logo_39d3a0e9.jpg", "Detail of the flexible metal neck and arc tip"],
       ["change_logo_cffa8bef.jpg", "Arc lighter shown with its USB charging cable"]
     ];
+    const thermometerImages = [
+      ["Gemini_Generated_Image_26sk9926sk9926sk.jpg", "Besiter infrared forehead thermometer with packaging"],
+      ["Gemini_Generated_Image_gsq3z8gsq3z8gsq3.jpg", "Besiter thermometer complete in 2 seconds"],
+      ["Gemini_Generated_Image_ssibu5ssibu5ssib.jpg", "Besiter thermometer measuring the forehead"],
+      ["Gemini_Generated_Image_6npvbn6npvbn6npv.jpg", "Fast and safe non-contact temperature measurement"]
+    ];
     const catalogProducts = {
       2: {
         title: "TRUE CHECK Blood Glucose Monitoring System",
@@ -373,6 +398,11 @@
         title: "Arc Lighter Rechargeable with Type-C Charging & LED Display",
         description: "Rechargeable flexible-neck electric arc lighter with Type-C charging and an LED battery display.",
         price: "Rs. 999"
+      },
+      7: {
+        title: "Besiter Infrared Forehead Thermometer - BST-0801",
+        description: "Fast, non-contact digital thermometer with a clear display and safe 2-second readings.",
+        price: "Rs. 1,699"
       }
     };
 
@@ -523,6 +553,12 @@
         mainImage.alt = firstImage[1];
         document.getElementById("product-lighter-details").hidden = false;
         renderGallery(lighterImages, "lighter pics");
+      } else if (selectedProduct === 7) {
+        const firstImage = thermometerImages[0];
+        mainImage.src = `gun/${firstImage[0]}`;
+        mainImage.alt = firstImage[1];
+        document.getElementById("product-thermometer-details").hidden = false;
+        renderGallery(thermometerImages, "gun");
       } else {
         mainImage.src = image;
         mainImage.alt = alt;

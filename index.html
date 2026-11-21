@@ -233,8 +233,8 @@ input:focus { --tw-ring-color: #b3132b !important; }
 <!-- Home page image slider -->
 <section class="w-full max-w-7xl mx-auto px-gutter py-space-sm" aria-label="Featured product images">
 <div class="relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-md" id="home-slider">
-<a href="product.html#5" id="home-slider-link" aria-label="View featured product details">
-<img class="block w-full h-[clamp(260px,34vw,440px)] object-contain bg-surface-container-low" id="home-slider-image" src="banner/easyrich-banner-pink.jpg" alt="EasyRich pink kitchen knife set banner">
+<a href="product.html#7" id="home-slider-link" aria-label="View featured Besiter thermometer details">
+<img class="block w-full h-[clamp(260px,34vw,440px)] object-contain bg-surface-container-low" id="home-slider-image" src="banner/besiter-thermometer-banner.jpg" alt="Besiter infrared forehead thermometer banner">
 </a>
 <button aria-label="Previous image" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 text-on-surface shadow-md flex items-center justify-center hover:bg-white" onclick="changeHomeSlide(-1)" type="button">
 <span class="material-symbols-outlined">chevron_left</span>
@@ -247,6 +247,7 @@ input:focus { --tw-ring-color: #b3132b !important; }
 <button aria-label="Show image 2" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(1)" type="button"></button>
 <button aria-label="Show image 3" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(2)" type="button"></button>
 <button aria-label="Show image 4" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(3)" type="button"></button>
+<button aria-label="Show image 5" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(4)" type="button"></button>
 </div>
 </div>
 </section>
@@ -363,6 +364,23 @@ input:focus { --tw-ring-color: #b3132b !important; }
 <div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
 <div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs. 999</div>
 <a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html">View product photos and details</a>
+</div>
+</div>
+</div>
+<!-- Product 7 -->
+<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="trending best-sellers">
+<a class="relative aspect-video bg-surface-container-low overflow-hidden block" data-path="product-detail" href="product detail.html">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Besiter infrared forehead thermometer with packaging" src="gun/Gemini_Generated_Image_26sk9926sk9926sk.jpg">
+</a>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors block" data-path="product-detail" href="product detail.html">Besiter Infrared Forehead Thermometer - BST-0801</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Fast, non-contact digital thermometer with a clear display and safe 2-second readings.</p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs. 1,699</div>
+<a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product detail.html">View product photos and details</a>
+</div>
 </div>
 </div>
 </div>
@@ -617,6 +635,11 @@ input:focus { --tw-ring-color: #b3132b !important; }
     if (mobileSearchButton) mobileSearchButton.remove();
 
     const homeSliderImages = [
+      {
+        src: 'banner/besiter-thermometer-banner.jpg',
+        alt: 'Besiter infrared forehead thermometer banner',
+        productId: 7
+      },
       {
         src: 'banner/easyrich-banner-pink.jpg',
         alt: 'EasyRich pink kitchen knife set banner',
@@ -895,7 +918,8 @@ input:focus { --tw-ring-color: #b3132b !important; }
       'TRUE CHECK meter kit with case, lancing device, 50 test strips and lancets.',
       '50 test strips for use with a compatible TRUE CHECK blood glucose meter. Meter and lancets are not included.',
       'Premium stainless kitchen knife set with hygienic non-stick coating, imported from HongKong and available in two colours.',
-      'Rechargeable flexible-neck electric arc lighter with Type-C charging and an LED battery display.'
+      'Rechargeable flexible-neck electric arc lighter with Type-C charging and an LED battery display.',
+      'Fast, non-contact Besiter forehead thermometer for safe and accurate 2-second readings.'
     ];
 
     function productDetailUrl(card) {
