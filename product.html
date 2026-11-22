@@ -161,6 +161,42 @@
       outline: 3px solid #b3132b;
       outline-offset: 3px;
     }
+    .related-products {
+      margin-top: 40px;
+      padding: 24px;
+      border: 1px solid #efc2c8;
+      border-radius: 16px;
+      background: #fffafb;
+      box-shadow: 0 10px 28px rgb(125 16 36 / 8%);
+    }
+    .related-products h2 { margin-top: 0; }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+      gap: 16px;
+    }
+    .related-card {
+      overflow: hidden;
+      border: 1px solid #efc2c8;
+      border-radius: 12px;
+      background: #fffdfd;
+      text-decoration: none;
+      transition: box-shadow .15s, transform .15s;
+    }
+    .related-card:hover {
+      box-shadow: 0 8px 20px rgb(125 16 36 / 12%);
+      transform: translateY(-2px);
+    }
+    .related-card img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      background: #fff0f2;
+    }
+    .related-card-content { padding: 12px; }
+    .related-card h3 { margin: 0; font-size: 15px; line-height: 1.4; }
+    .related-card p { margin: 8px 0 0; color: #b3132b; font-weight: 700; }
     #waOrderModal input:focus {
       border-color: #b3132b !important;
       outline: 2px solid rgb(179 19 43 / 20%);
@@ -304,6 +340,10 @@
         </div>
       </section>
     </div>
+    <section class="related-products" aria-labelledby="related-products-heading">
+      <h2 id="related-products-heading">Explore Other Products</h2>
+      <div class="related-grid" id="related-products"></div>
+    </section>
   </main>
   <div id="waOrderModal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);padding:1rem;z-index:1000;">
     <div style="width:min(100%, 28rem); background:white; border-radius:1rem; padding:1.25rem; box-shadow:0 20px 50px rgba(0,0,0,0.18);">
@@ -374,35 +414,54 @@
       ["Gemini_Generated_Image_6npvbn6npvbn6npv.jpg", "Fast and safe non-contact temperature measurement"]
     ];
     const catalogProducts = {
+      1: {
+        title: "Philips InnoSpire Go Portable Mesh Nebulizer",
+        description: "Portable, rechargeable nebulizer with a carrying case.",
+        price: "Rs. 6,500",
+        image: "Philips Mesh Nebulizer/Redesign_original_picture_4K_202607221439 (1).jpeg",
+        alt: "Philips InnoSpire Go portable mesh nebulizer"
+      },
       2: {
         title: "TRUE CHECK Blood Glucose Monitoring System",
         description: "Meter kit shown with case, lancing device, test strips and lancets.",
-        price: "Rs. 1,499"
+        price: "Rs. 1,499",
+        image: "pics of glucometer/glucometer (10).jpg",
+        alt: "TRUE CHECK blood glucose meter kit with accessories"
       },
       3: {
         title: "TRUE CHECK Blood Glucose Monitoring System - 50 Strips",
         description: "TRUE CHECK meter kit with case, lancing device, 50 test strips and lancets.",
-        price: "Rs. 2,499"
+        price: "Rs. 2,499",
+        image: "pics of glucometer/glucometer (10).jpg",
+        alt: "TRUE CHECK blood glucose meter kit with 50 test strips"
       },
       4: {
         title: "TRUE CHECK Blood Glucose Test Strips - 50 Count",
         description: "50 test strips for use with a compatible TRUE CHECK blood glucose meter. Meter and lancets are not included.",
-        price: "Rs. 1,999"
+        price: "Rs. 1,999",
+        image: "pics of glucometer/glucometer (15).jpg",
+        alt: "TRUE CHECK blood glucose test strips"
       },
       5: {
         title: "EasyRich 6-Piece Kitchen Knife Set - Pink & Green, 2 Colours",
         description: "Premium stainless kitchen knife set with hygienic non-stick coating, imported from HongKong and available in two colours.",
-        price: "Rs 2999"
+        price: "Rs 2999",
+        image: "knifeset pics/Pink_knifeset_like_greenset_design_202607211846.jpeg",
+        alt: "EasyRich kitchen knife set in pink and green"
       },
       6: {
         title: "Arc Lighter Rechargeable with Type-C Charging & LED Display",
         description: "Rechargeable flexible-neck electric arc lighter with Type-C charging and an LED battery display.",
-        price: "Rs. 999"
+        price: "Rs. 999",
+        image: "lighter pics/add_logo_ad84c13e.jpg",
+        alt: "Rechargeable flexible-neck arc lighter"
       },
       7: {
         title: "Besiter Infrared Forehead Thermometer - BST-0801",
         description: "Fast, non-contact digital thermometer with a clear display and safe 2-second readings.",
-        price: "Rs. 1,699"
+        price: "Rs. 1,699",
+        image: "gun/Gemini_Generated_Image_26sk9926sk9926sk.jpg",
+        alt: "Besiter infrared forehead thermometer"
       }
     };
 
@@ -410,6 +469,36 @@
     const gallery = document.getElementById("gallery");
     const productParams = new URLSearchParams(window.location.search);
     const selectedProduct = Number(productParams.get("product") || window.location.hash.slice(1));
+
+    function renderRelatedProducts(currentProductId) {
+      const container = document.getElementById("related-products");
+      const productCards = Object.entries(catalogProducts)
+        .filter(([id]) => Number(id) !== currentProductId)
+        .map(([id, product]) => {
+          const link = document.createElement("a");
+          link.className = "related-card";
+          link.href = `product.html?product=${id}`;
+
+          const image = document.createElement("img");
+          image.src = product.image;
+          image.alt = product.alt;
+          image.loading = "lazy";
+
+          const content = document.createElement("div");
+          content.className = "related-card-content";
+          const title = document.createElement("h3");
+          title.textContent = product.title;
+          const price = document.createElement("p");
+          price.textContent = product.price;
+          content.append(title, price);
+          link.append(image, content);
+          return link;
+        });
+
+      container.replaceChildren(...productCards);
+    }
+
+    renderRelatedProducts(selectedProduct);
 
     function openWhatsAppOrderForm(productName) {
       const modal = document.getElementById('waOrderModal');
