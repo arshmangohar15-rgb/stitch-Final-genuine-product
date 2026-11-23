@@ -605,9 +605,9 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 </div>
 </div>
 <div class="flex flex-col gap-2 pt-2">
-<button class="h-12 rounded-lg bg-[#25D366] text-white font-label-lg font-bold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-2 shadow-md" id="modalWhatsAppBtn" type="button">
+<a class="h-12 rounded-lg bg-[#25D366] text-white font-label-lg font-bold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-2 shadow-md" id="modalWhatsAppBtn" href="https://wa.me/923224268147" target="_blank" rel="noopener noreferrer">
 <span class="material-symbols-outlined text-[22px]">chat</span> Order Now via WhatsApp (+923224268147)
-            </button>
+            </a>
 <button class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors" onclick="closeProductDetail()">
               Continue Browsing
             </button>
@@ -619,36 +619,10 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 <!-- Floating WhatsApp Order Button -->
 <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
 <!-- Main Floating WhatsApp Button -->
-<button id="floatingWhatsAppBtn" aria-label="Order on WhatsApp" class="group flex items-center gap-2.5 px-4 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105 border-0 cursor-pointer" type="button">
+<a id="floatingWhatsAppBtn" aria-label="Order on WhatsApp" class="group flex items-center gap-2.5 px-4 py-3 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-2xl transition-all duration-300 hover:scale-105" href="https://wa.me/923224268147?text=Hello%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer">
 <span class="material-symbols-outlined text-[28px]">chat</span>
 <span class="font-label-lg font-bold pr-1 hidden sm:inline">Order via WhatsApp</span>
-</button>
-</div>
-<div id="waOrderModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 p-4">
-  <div class="w-full max-w-md rounded-2xl bg-white p-5 shadow-2xl">
-    <div class="flex items-center justify-between mb-4">
-      <h3 class="font-headline-sm text-on-surface">Quick Order</h3>
-      <button type="button" class="text-on-surface-variant" aria-label="Close order form" onclick="closeWhatsAppOrderForm()">✕</button>
-    </div>
-    <form id="waOrderForm" class="space-y-4">
-      <input id="waProductName" type="hidden" value="Genuine Products">
-      <div>
-        <label for="waCustomerName" class="block font-label-md text-on-surface mb-1">Name *</label>
-        <input id="waCustomerName" type="text" required class="w-full rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2 text-on-surface" placeholder="Enter your full name" />
-      </div>
-      <div>
-        <label for="waCustomerPhone" class="block font-label-md text-on-surface mb-1">Phone Number *</label>
-        <input id="waCustomerPhone" type="tel" required class="w-full rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2 text-on-surface" placeholder="03xx xxxxxxx" />
-      </div>
-      <div>
-        <label for="waCustomerCity" class="block font-label-md text-on-surface mb-1">City (optional)</label>
-        <input id="waCustomerCity" type="text" class="w-full rounded-lg border border-outline-variant bg-surface-container-low px-3 py-2 text-on-surface" placeholder="e.g. Lahore" />
-      </div>
-      <button type="submit" class="w-full h-12 rounded-lg bg-[#25D366] text-white font-label-lg font-bold hover:bg-[#20ba5a] transition-colors flex items-center justify-center gap-2">
-        <span class="material-symbols-outlined text-[22px]">chat</span> Send on WhatsApp
-      </button>
-    </form>
-  </div>
+</a>
 </div>
 <!-- Inline Script for Interactive Catalog Filters & Lightbox modal -->
 <script>
@@ -779,24 +753,9 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
       if (emptyState) emptyState.classList.toggle('hidden', visibleCount > 0);
     }
 
-    function openWhatsAppOrderForm(productName) {
-      const modal = document.getElementById('waOrderModal');
-      const hiddenProduct = document.getElementById('waProductName');
-      hiddenProduct.value = productName || 'Genuine Products';
-      document.getElementById('waCustomerName').value = '';
-      document.getElementById('waCustomerPhone').value = '';
-      document.getElementById('waCustomerCity').value = '';
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      document.body.style.overflow = 'hidden';
-      setTimeout(() => document.getElementById('waCustomerName').focus(), 100);
-    }
-
-    function closeWhatsAppOrderForm() {
-      const modal = document.getElementById('waOrderModal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      document.body.style.overflow = 'auto';
+    function whatsAppOrderUrl(productName) {
+      const message = `Hello Genuine Products, I would like to order ${productName}. Please confirm availability and delivery details.`;
+      return `https://wa.me/923224268147?text=${encodeURIComponent(message)}`;
     }
 
     function openProductDetail(title, price, rating, badge, desc) {
@@ -807,7 +766,7 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
       document.getElementById('modalBadge').textContent = badge;
       document.getElementById('modalDescription').textContent = desc;
       document.getElementById('modalImgLabel').textContent = title + ' - Replace with your image';
-      document.getElementById('modalWhatsAppBtn').onclick = () => openWhatsAppOrderForm(title);
+      document.getElementById('modalWhatsAppBtn').href = whatsAppOrderUrl(title);
 
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
@@ -821,50 +780,9 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 
     window.addEventListener('click', function(e) {
       const modal = document.getElementById('productDetailModal');
-      const waModal = document.getElementById('waOrderModal');
       if (e.target === modal) {
         closeProductDetail();
       }
-      if (e.target === waModal) {
-        closeWhatsAppOrderForm();
-      }
-    });
-
-    document.getElementById('waOrderForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const name = document.getElementById('waCustomerName').value.trim();
-      const phone = document.getElementById('waCustomerPhone').value.trim();
-      const city = document.getElementById('waCustomerCity').value.trim();
-      const product = document.getElementById('waProductName').value.trim();
-
-      if (!name) {
-        alert('Please enter your name.');
-        document.getElementById('waCustomerName').focus();
-        return;
-      }
-
-      if (!phone) {
-        alert('Please enter your phone number.');
-        document.getElementById('waCustomerPhone').focus();
-        return;
-      }
-
-      const message = `Hello Genuine Products, I would like to order *${product}*. My name is *${name}*. My phone number is *${phone}*. ${city ? 'City: *' + city + '*.' : ''} Please confirm availability and delivery details.`;
-      const waUrl = 'https://wa.me/923224268147?text=' + encodeURIComponent(message);
-      window.open(waUrl, '_blank');
-      closeWhatsAppOrderForm();
-    });
-
-    document.getElementById('floatingWhatsAppBtn').addEventListener('click', function() {
-      openWhatsAppOrderForm('Genuine Products');
-    });
-
-    document.addEventListener('click', function(event) {
-      const link = event.target.closest('a[href*="wa.me"]');
-      if (!link) return;
-      event.preventDefault();
-      const title = link.closest('.product-item')?.querySelector('a.font-title-md');
-      openWhatsAppOrderForm(link.dataset.productName || title?.textContent.trim() || 'Genuine Products');
     });
 
     const customerReviews = [
@@ -995,7 +913,7 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
         }
       }
       if (orderLink) {
-        orderLink.href = `https://wa.me/923224268147?text=${encodeURIComponent(`Hello, I want to order ${productName}.`)}`;
+        orderLink.href = whatsAppOrderUrl(productName);
         orderLink.target = '_blank';
         orderLink.rel = 'noopener noreferrer';
         orderLink.dataset.productName = productName;
