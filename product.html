@@ -120,6 +120,7 @@
     #product-lighter-details[hidden] { display: none; }
     #product-four-details[hidden] { display: none; }
     #product-thermometer-details[hidden] { display: none; }
+    #product-blender-details[hidden] { display: none; }
     h1 { margin: 8px 0 12px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; }
     .price { margin: 0 0 22px; color: #b3132b; font-size: 24px; font-weight: 700; }
     h2 { margin: 24px 0 10px; color: #8d1429; font-size: 18px; }
@@ -338,6 +339,25 @@
           </ul>
           <p class="note">Cash on delivery available across Pakistan.</p>
         </div>
+        <div id="product-blender-details" hidden>
+          <h2>Features</h2>
+          <ul>
+            <li>Powerful 400W motor for blending, mixing, pureeing and beating.</li>
+            <li>Turbo mode provides extra power for thicker mixtures and tougher ingredients.</li>
+            <li>Stainless-steel blending blade designed for smooth, consistent results.</li>
+            <li>Detachable shaft makes cleaning and storage convenient.</li>
+            <li>Comfortable handheld design with simple push-button controls.</li>
+            <li>Suitable for soups, sauces, smoothies, milkshakes and baby food.</li>
+          </ul>
+          <h2>Contents</h2>
+          <ul>
+            <li>Matrix MX-1422 Hand Blender</li>
+            <li>Detachable Stainless-Steel Blending Shaft</li>
+            <li>Power Cable</li>
+            <li>Instruction Manual</li>
+          </ul>
+          <p class="note">Cash on delivery available across Pakistan.</p>
+        </div>
       </section>
     </div>
     <section class="related-products" aria-labelledby="related-products-heading">
@@ -409,6 +429,14 @@
       ["Gemini_Generated_Image_ssibu5ssibu5ssib.jpg", "Besiter thermometer measuring the forehead"],
       ["Gemini_Generated_Image_6npvbn6npvbn6npv.jpg", "Fast and safe non-contact temperature measurement"]
     ];
+    const blenderImages = [
+      ["Make_impressive_ad_image_72c83b91_2K.jpg", "Matrix MX-1422 hand blender power and precision"],
+      ["Making_website_listing_images_910121e7_2K.jpg", "Matrix MX-1422 hand blender in retail packaging"],
+      ["white_background_dbe484d0_2K.jpg", "Matrix hand blender with detachable blending shaft"],
+      ["white_background_5bd9dc64_2K.jpg", "Close-up of Matrix hand blender controls and blade"],
+      ["product_detail_3c8ba6ea_2K.jpg", "Matrix hand blender motor body and controls"],
+      ["Mention_product_info_on_white_15340237_2K.jpg", "Matrix hand blender product information"]
+    ];
     const catalogProducts = {
       1: {
         title: "Philips InnoSpire Go Portable Mesh Nebulizer",
@@ -458,6 +486,13 @@
         price: "Rs. 1,699",
         image: "gun/Gemini_Generated_Image_26sk9926sk9926sk.jpg",
         alt: "Besiter infrared forehead thermometer"
+      },
+      8: {
+        title: "Matrix MX-1422 400W Hand Blender",
+        description: "Powerful 400W immersion blender with turbo mode and stainless-steel blending blades.",
+        price: "Rs 2999",
+        image: "hand blender/Make_impressive_ad_image_72c83b91_2K.jpg",
+        alt: "Matrix MX-1422 400W hand blender"
       }
     };
 
@@ -644,6 +679,12 @@
         mainImage.alt = firstImage[1];
         document.getElementById("product-thermometer-details").hidden = false;
         renderGallery(thermometerImages, "gun");
+      } else if (selectedProduct === 8) {
+        const firstImage = blenderImages[0];
+        mainImage.src = `hand blender/${firstImage[0]}`;
+        mainImage.alt = firstImage[1];
+        document.getElementById("product-blender-details").hidden = false;
+        renderGallery(blenderImages, "hand blender");
       } else {
         mainImage.src = image;
         mainImage.alt = alt;
