@@ -132,6 +132,7 @@
     #product-four-details[hidden] { display: none; }
     #product-thermometer-details[hidden] { display: none; }
     #product-blender-details[hidden] { display: none; }
+    #product-speaker-details[hidden] { display: none; }
     h1 { margin: 8px 0 12px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; }
     .price { margin: 0 0 22px; color: #b3132b; font-size: 24px; font-weight: 700; }
     h2 { margin: 24px 0 10px; color: #8d1429; font-size: 18px; }
@@ -369,6 +370,23 @@
           </ul>
           <p class="note">Cash on delivery available across Pakistan.</p>
         </div>
+        <div id="product-speaker-details" hidden>
+          <h2>Features</h2>
+          <ul>
+            <li>Portable wireless Bluetooth speaker with powerful, clear sound.</li>
+            <li>Built-in rechargeable battery for wireless use.</li>
+            <li>Integrated flashlight for outdoor and emergency use.</li>
+            <li>Carry handle for easy transport.</li>
+            <li>Available in blue with a gold-finish accent.</li>
+          </ul>
+          <h2>Contents</h2>
+          <ul>
+            <li>Portable Wireless Speaker</li>
+            <li>Charging Cable</li>
+            <li>User Manual</li>
+          </ul>
+          <p class="note">Cash on delivery available across Pakistan.</p>
+        </div>
       </section>
     </div>
     <section class="related-products" aria-labelledby="related-products-heading">
@@ -423,6 +441,13 @@
       ["white_background_5bd9dc64_2K.jpg", "Close-up of Matrix hand blender controls and blade"],
       ["product_detail_3c8ba6ea_2K.jpg", "Matrix hand blender motor body and controls"],
       ["Mention_product_info_on_white_15340237_2K.jpg", "Matrix hand blender product information"]
+    ];
+    const speakerImages = [
+      ["no_change_f548db28.jpg", "Portable wireless speaker advertising banner"],
+      ["white_background_and_any_change_4a14e147.jpg", "Portable wireless speaker in blue"],
+      ["white_background_and_any_change_df793f54.jpg", "Front view of the portable wireless speaker flashlight"],
+      ["white_background_37579b84.jpg", "Portable wireless speaker shown with retail packaging"],
+      ["white_background_and_any_change_fb94e131.jpg", "Portable wireless speaker control panel"]
     ];
     const catalogProducts = {
       1: {
@@ -480,6 +505,13 @@
         price: "Rs 2999",
         image: "hand blender/Make_impressive_ad_image_72c83b91_2K.jpg",
         alt: "Matrix MX-1422 400W hand blender"
+      },
+      9: {
+        title: "Portable Wireless Bluetooth Speaker",
+        description: "Portable wireless speaker with powerful sound, Bluetooth connectivity, flashlight and built-in battery.",
+        price: "Rs. 1,999",
+        image: "speaker/no_change_f548db28.jpg",
+        alt: "Portable wireless speaker advertising banner"
       }
     };
 
@@ -631,6 +663,12 @@
         mainImage.alt = firstImage[1];
         document.getElementById("product-blender-details").hidden = false;
         renderGallery(blenderImages, "hand blender");
+      } else if (selectedProduct === 9) {
+        const firstImage = speakerImages[0];
+        mainImage.src = `speaker/${firstImage[0]}`;
+        mainImage.alt = firstImage[1];
+        document.getElementById("product-speaker-details").hidden = false;
+        renderGallery(speakerImages, "speaker");
       } else {
         mainImage.src = image;
         mainImage.alt = alt;

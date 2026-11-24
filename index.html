@@ -200,7 +200,22 @@ input:focus { --tw-ring-color: #b3132b !important; }
 #catalog { padding-block: 1.5rem !important; }
 #catalog > div:first-child { margin-bottom: 1rem; }
 #productsContainer { gap: 1rem; }
-#productsContainer > .product-item > a:first-child img { object-fit: contain; }
+#productsContainer {
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+}
+#productsContainer > .product-item {
+  height: 100%;
+  min-height: 0;
+}
+#productsContainer > .product-item > a:first-child {
+  height: 190px;
+  flex: 0 0 190px;
+}
+#productsContainer > .product-item > a:first-child img {
+  object-fit: contain;
+  object-position: center;
+}
 #productsContainer > .product-item > div.p-space-md { padding: 0.5rem; }
 #productsContainer .product-item a.font-title-md {
   display: -webkit-box;
@@ -248,8 +263,8 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 <!-- Home page image slider -->
 <section class="w-full max-w-7xl mx-auto px-gutter py-space-sm" aria-label="Featured product images">
 <div class="relative overflow-hidden rounded-xl bg-surface-container-lowest shadow-md" id="home-slider">
-<a href="product.html#8" id="home-slider-link" aria-label="View featured Matrix hand blender details">
-<img class="block w-full h-[clamp(260px,34vw,440px)] object-contain bg-surface-container-low" id="home-slider-image" src="banner/resize_cde6bdcd_2K.jpg" alt="Matrix MX-1422 400W hand blender banner">
+<a href="#catalog" id="home-slider-link" aria-label="View featured portable speaker">
+<img class="block w-full h-[clamp(260px,34vw,440px)] object-contain bg-surface-container-low" id="home-slider-image" src="banner/Make_impressive_ad_image_d0aeb64f.jpg" alt="Portable wireless speaker banner">
 </a>
 <button aria-label="Previous image" class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/90 text-on-surface shadow-md flex items-center justify-center hover:bg-white" onclick="changeHomeSlide(-1)" type="button">
 <span class="material-symbols-outlined">chevron_left</span>
@@ -264,6 +279,7 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 <button aria-label="Show image 4" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(3)" type="button"></button>
 <button aria-label="Show image 5" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(4)" type="button"></button>
 <button aria-label="Show image 6" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(5)" type="button"></button>
+<button aria-label="Show image 7" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(6)" type="button"></button>
 </div>
 </div>
 </section>
@@ -412,6 +428,23 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 <div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
 <div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs 2999</div>
 <a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product.html#8">View product photos and details</a>
+</div>
+</div>
+</div>
+<!-- Product 9 -->
+<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="trending best-sellers">
+<a class="relative aspect-video bg-surface-container-low overflow-hidden block" data-path="product-detail" href="product.html#9">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Portable wireless speaker advertising banner" src="speaker/no_change_f548db28.jpg">
+</a>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors block" data-path="product-detail" href="product.html#9">Portable Wireless Bluetooth Speaker</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Portable wireless speaker with powerful sound, Bluetooth connectivity, flashlight and built-in battery.</p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs. 1,999</div>
+<a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product.html#9">View product photos and details</a>
+</div>
 </div>
 </div>
 </div>
@@ -642,6 +675,11 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 
     const homeSliderImages = [
       {
+        src: 'banner/Make_impressive_ad_image_d0aeb64f.jpg',
+        alt: 'Portable wireless speaker banner',
+        href: '#catalog'
+      },
+      {
         src: 'banner/resize_cde6bdcd_2K.jpg',
         alt: 'Matrix MX-1422 400W hand blender banner',
         productId: 8
@@ -681,9 +719,14 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
       const image = document.getElementById('home-slider-image');
       image.src = slide.src;
       image.alt = slide.alt;
-      const productCard = document.querySelector(`.product-item[data-product-id="${slide.productId}"]`);
-      if (productCard) {
-        document.getElementById('home-slider-link').href = productDetailUrl(productCard);
+      const sliderLink = document.getElementById('home-slider-link');
+      if (slide.href) {
+        sliderLink.href = slide.href;
+      } else {
+        const productCard = document.querySelector(`.product-item[data-product-id="${slide.productId}"]`);
+        if (productCard) {
+          sliderLink.href = productDetailUrl(productCard);
+        }
       }
 
       document.querySelectorAll('#home-slider-dots button').forEach((dot, dotIndex) => {
@@ -875,7 +918,8 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
       'Premium stainless kitchen knife set with hygienic non-stick coating, imported from HongKong and available in two colours.',
       'Rechargeable flexible-neck electric arc lighter with Type-C charging and an LED battery display.',
       'Fast, non-contact Besiter forehead thermometer for safe and accurate 2-second readings.',
-      'Powerful 400W Matrix MX-1422 hand blender with turbo mode and stainless-steel blending blades.'
+      'Powerful 400W Matrix MX-1422 hand blender with turbo mode and stainless-steel blending blades.',
+      'Portable wireless speaker with powerful sound, Bluetooth connectivity, flashlight and built-in battery.'
     ];
 
     function productDetailUrl(card) {
