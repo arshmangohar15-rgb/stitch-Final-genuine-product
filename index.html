@@ -649,6 +649,33 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 </div>
 </div>
 </div>
+<dialog id="whatsappOrderDialog" aria-labelledby="whatsappOrderHeading" class="w-[calc(100%-2rem)] max-w-md rounded-2xl border-0 p-0 shadow-2xl backdrop:bg-black/60">
+  <form id="whatsappOrderForm" class="space-y-4 p-6">
+    <div class="flex items-start justify-between gap-4">
+      <div>
+        <h2 id="whatsappOrderHeading" class="font-headline-md text-headline-md text-on-surface">Complete your order</h2>
+        <p class="mt-1 font-body-sm text-on-surface-variant">Enter your details to continue to WhatsApp.</p>
+      </div>
+      <button type="button" class="rounded-lg p-2 text-on-surface-variant hover:bg-surface-container" aria-label="Close order form" onclick="document.getElementById('whatsappOrderDialog').close()">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="rounded-lg bg-surface-container-low p-3">
+      <span class="font-label-sm text-outline">Product</span>
+      <p id="whatsappOrderProduct" class="mt-1 font-title-md text-on-surface"></p>
+    </div>
+    <label class="block font-label-md text-on-surface" for="whatsappCustomerName">Name <span class="text-error">*</span>
+      <input id="whatsappCustomerName" name="customerName" type="text" autocomplete="name" required class="mt-1 w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 font-body-md focus:outline-none focus:ring-2 focus:ring-primary">
+    </label>
+    <label class="block font-label-md text-on-surface" for="whatsappCustomerNumber">Number <span class="text-error">*</span>
+      <input id="whatsappCustomerNumber" name="customerNumber" type="tel" autocomplete="tel" inputmode="tel" required class="mt-1 w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 font-body-md focus:outline-none focus:ring-2 focus:ring-primary">
+    </label>
+    <label class="block font-label-md text-on-surface" for="whatsappCustomerCity">City <span class="text-error">*</span>
+      <input id="whatsappCustomerCity" name="customerCity" type="text" autocomplete="address-level2" required class="mt-1 w-full rounded-lg border border-outline-variant bg-surface-container-lowest px-3 py-2 font-body-md focus:outline-none focus:ring-2 focus:ring-primary">
+    </label>
+    <button type="submit" class="w-full rounded-lg bg-[#25D366] px-4 py-3 font-label-lg font-bold text-white hover:bg-[#20ba5a]">Continue to WhatsApp</button>
+  </form>
+</dialog>
 <!-- Floating WhatsApp Order Button -->
 <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end">
 <!-- Main Floating WhatsApp Button -->
@@ -801,6 +828,60 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
       return `https://wa.me/923224268147?text=${encodeURIComponent(message)}`;
     }
 
+    let selectedWhatsAppProduct = 'General inquiry';
+    const whatsappOrderDialog = document.getElementById('whatsappOrderDialog');
+    const whatsappOrderForm = document.getElementById('whatsappOrderForm');
+
+    function openWhatsAppOrderDialog(productName) {
+      selectedWhatsAppProduct = productName;
+      document.getElementById('whatsappOrderProduct').textContent = productName;
+      whatsappOrderDialog.showModal();
+      document.getElementById('whatsappCustomerName').focus();
+    }
+
+    document.addEventListener('click', event => {
+      const link = event.target.closest('a[href*="wa.me"]');
+      if (!link) return;
+      event.preventDefault();
+      openWhatsAppOrderDialog(link.dataset.productName || 'General inquiry');
+    });
+
+    whatsappOrderForm.addEventListener('input', event => {
+      event.target.setCustomValidity('');
+    });
+    whatsappOrderForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const nameField = document.getElementById('whatsappCustomerName');
+      const numberField = document.getElementById('whatsappCustomerNumber');
+      const cityField = document.getElementById('whatsappCustomerCity');
+      const customer = {
+        name: nameField.value.trim(),
+        number: numberField.value.trim(),
+        city: cityField.value.trim()
+      };
+      const missingField = [
+        [nameField, customer.name],
+        [numberField, customer.number],
+        [cityField, customer.city]
+      ].find(([, value]) => !value);
+      if (missingField) {
+        missingField[0].setCustomValidity('This field is required.');
+        missingField[0].reportValidity();
+        return;
+      }
+
+      const message = `Hello Genuine Products, I would like to place an order.\nProduct: ${selectedWhatsAppProduct}\nName: ${customer.name}\nNumber: ${customer.number}\nCity: ${customer.city}`;
+      const whatsappUrl = `https://wa.me/923224268147?text=${encodeURIComponent(message)}`;
+      whatsappOrderDialog.close();
+      whatsappOrderForm.reset();
+      const whatsappWindow = window.open(whatsappUrl, '_blank');
+      if (whatsappWindow) {
+        whatsappWindow.opener = null;
+      } else {
+        window.location.assign(whatsappUrl);
+      }
+    });
+
     function openProductDetail(title, price, rating, badge, desc) {
       const modal = document.getElementById('productDetailModal');
       document.getElementById('modalTitle').textContent = title;
@@ -810,6 +891,7 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
       document.getElementById('modalDescription').textContent = desc;
       document.getElementById('modalImgLabel').textContent = title + ' - Replace with your image';
       document.getElementById('modalWhatsAppBtn').href = whatsAppOrderUrl(title);
+      document.getElementById('modalWhatsAppBtn').dataset.productName = title;
 
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
