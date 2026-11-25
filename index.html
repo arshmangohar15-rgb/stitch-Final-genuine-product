@@ -244,6 +244,46 @@ input:focus { --tw-ring-color: #b3132b !important; }
   height: 2rem;
   font-size: 0.6875rem;
 }
+.advance-payment-flasher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 3vw, 2rem);
+  width: min(100% - 2rem, 76rem);
+  margin: 0 auto 0.75rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid #e8bd54;
+  border-radius: 1rem;
+  background: linear-gradient(110deg, #7d1024, #b3132b 62%, #d33a4b);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 8px 22px rgb(125 16 36 / 22%);
+  animation: advance-payment-glow 2.6s ease-in-out infinite;
+}
+.advance-payment-flasher strong {
+  color: #ffe28a;
+  font-family: "Plus Jakarta Sans", Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.25rem);
+  font-style: italic;
+  font-weight: 800;
+  line-height: 1;
+  white-space: nowrap;
+}
+.advance-payment-flasher span {
+  font-family: "Plus Jakarta Sans", Georgia, serif;
+  font-size: clamp(1.05rem, 2.5vw, 1.55rem);
+  font-weight: 800;
+  line-height: 1.25;
+}
+@keyframes advance-payment-glow {
+  50% { box-shadow: 0 10px 30px rgb(179 19 43 / 38%), 0 0 0 5px rgb(232 189 84 / 20%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .advance-payment-flasher { animation: none; }
+}
+@media (max-width: 480px) {
+  .advance-payment-flasher { gap: 0.65rem; padding: 0.85rem 0.6rem; }
+}
 </style>
 <script>
 !function(f,b,e,v,n,t,s)
@@ -282,6 +322,10 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 <button aria-label="Show image 7" aria-current="false" class="w-2.5 h-2.5 rounded-full bg-white/50" onclick="showHomeSlide(6)" type="button"></button>
 </div>
 </div>
+</section>
+<section class="advance-payment-flasher" aria-label="10% discount on advance payment">
+<strong>10%</strong>
+<span>Discount on Advance Payment</span>
 </section>
 <!-- Main Catalog Section -->
 <section class="w-full max-w-7xl mx-auto px-gutter py-space-xl scroll-mt-40" id="catalog">
