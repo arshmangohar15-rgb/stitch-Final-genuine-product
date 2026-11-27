@@ -340,7 +340,7 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 </div>
 <!-- Filter Controls -->
 <div class="flex items-center gap-2 overflow-x-auto pb-1" id="filterBar">
-<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (6)</button>
+<button class="filter-tab active px-4 py-2 rounded-lg bg-primary text-on-primary font-label-md transition-all shadow-sm" data-tab="all" onclick="filterCatalog('all')">All (10)</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="trending" onclick="filterCatalog('trending')">Trending</button>
 <button class="filter-tab px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface-variant hover:text-on-surface font-label-md transition-all shadow-sm" data-tab="best-sellers" onclick="filterCatalog('best-sellers')">Best Sellers</button>
 </div>
@@ -488,6 +488,23 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
 <div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
 <div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs. 1,999</div>
 <a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product.html#9">View product photos and details</a>
+</div>
+</div>
+</div>
+<!-- Product 10 -->
+<div class="product-item group bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="trending best-sellers">
+<a class="relative aspect-video bg-surface-container-low overflow-hidden block" data-path="product-detail" href="product.html#10">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Yuwell YE660 electronic blood pressure monitor in a home setting" src="yuwell bp monitor/Using_images_to_create_ads_b6da4746_2K.jpg">
+</a>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<a class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors block" data-path="product-detail" href="product.html#10">Yuwell YE660 Electronic Blood Pressure Monitor</a>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Automatic upper-arm monitor with 22-45 cm cuff, voice broadcast, irregular heartbeat indication and large digital display.</p>
+</div>
+<div class="mt-space-md pt-space-xs border-t border-outline-variant/30">
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mb-3">Rs. 5,500</div>
+<a class="h-10 rounded-lg bg-surface-container text-on-surface font-label-sm hover:bg-surface-container-high transition-colors flex items-center justify-center gap-1" data-path="product-detail" href="product.html#10">View product photos and details</a>
+</div>
 </div>
 </div>
 </div>
@@ -745,6 +762,11 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
     if (mobileSearchButton) mobileSearchButton.remove();
 
     const homeSliderImages = [
+      {
+        src: 'banner/no_change_64534aeb_2K.jpg',
+        alt: 'Yuwell YE660 electronic blood pressure monitor banner',
+        productId: 10
+      },
       {
         src: 'banner/Make_impressive_ad_image_d0aeb64f.jpg',
         alt: 'Portable wireless speaker banner',
@@ -1045,7 +1067,8 @@ src="https://www.facebook.com/tr?id=1747145070099566&amp;ev=PageView&amp;noscrip
       'Rechargeable flexible-neck electric arc lighter with Type-C charging and an LED battery display.',
       'Fast, non-contact Besiter forehead thermometer for safe and accurate 2-second readings.',
       'Powerful 400W Matrix MX-1422 hand blender with turbo mode and stainless-steel blending blades.',
-      'Portable wireless speaker with powerful sound, Bluetooth connectivity, flashlight and built-in battery.'
+      'Portable wireless speaker with powerful sound, Bluetooth connectivity, flashlight and built-in battery.',
+      'Automatic upper-arm blood pressure monitor with a 22-45 cm cuff, voice broadcast, irregular heartbeat indication and large digital display.'
     ];
 
     function productDetailUrl(card) {

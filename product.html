@@ -137,6 +137,7 @@
     #product-thermometer-details[hidden] { display: none; }
     #product-blender-details[hidden] { display: none; }
     #product-speaker-details[hidden] { display: none; }
+    #product-yuwell-details[hidden] { display: none; }
     h1 { margin: 8px 0 12px; font-size: clamp(26px, 4vw, 36px); line-height: 1.15; }
     .price { margin: 0 0 22px; color: #b3132b; font-size: 24px; font-weight: 700; }
     .advance-payment-flasher {
@@ -474,6 +475,37 @@
           </ul>
           <p class="note">Cash on delivery available across Pakistan.</p>
         </div>
+        <div id="product-yuwell-details" hidden>
+          <h2>Key Features</h2>
+          <ul>
+            <li>Automatic upper-arm blood pressure measurement for simple, one-button daily use.</li>
+            <li>Large digital display clearly shows systolic, diastolic and pulse readings.</li>
+            <li>Voice broadcast assistance helps users review results without straining to read the screen.</li>
+            <li>Irregular heartbeat indication alerts you to an unusual pulse pattern during measurement.</li>
+            <li>Cuff fitting detection helps confirm that the arm cuff is positioned correctly.</li>
+            <li>Comfortable upper-arm cuff designed for arm circumferences of approximately 22-45 cm.</li>
+            <li>Stores previous readings for easy comparison and home blood pressure monitoring.</li>
+          </ul>
+          <h2>How to Use</h2>
+          <ul>
+            <li>Rest for at least five minutes before measuring.</li>
+            <li>Seat yourself upright with your back supported and your feet flat.</li>
+            <li>Place the cuff directly on bare skin around the upper arm, as shown in the manual.</li>
+            <li>Keep the monitor at heart level and remain still while the measurement is in progress.</li>
+            <li>Repeat only as directed by your healthcare professional; do not interpret one reading alone.</li>
+          </ul>
+          <h2>Packing Includes</h2>
+          <ul>
+            <li>YE660 Blood Pressure Monitor</li>
+            <li>22-45 cm Upper-Arm Cuff</li>
+            <li>Power Adapter / Charger</li>
+            <li>USB Cable</li>
+            <li>User Manual</li>
+          </ul>
+          <h2>Package Contents May Vary</h2>
+          <p>Package contents and included cables may vary slightly by supply batch. Please check the received item and follow the printed instruction manual.</p>
+          <p class="note">Cash on delivery available across Pakistan. Measurements are for personal monitoring and do not replace advice from a qualified healthcare professional.</p>
+        </div>
       </section>
     </div>
     <section class="related-products" aria-labelledby="related-products-heading">
@@ -559,6 +591,13 @@
       ["white_background_37579b84.jpg", "Portable wireless speaker shown with retail packaging"],
       ["white_background_and_any_change_fb94e131.jpg", "Portable wireless speaker control panel"]
     ];
+    const yuwellImages = [
+      ["Using_images_to_create_ads_b6da4746_2K.jpg", "Yuwell YE660 electronic blood pressure monitor lifestyle advertisement"],
+      ["Change_background_and_title_0aa18754_2K.jpg", "Yuwell YE660 blood pressure monitor with cuff and box"],
+      ["Change_background_to_white_ffcbde7e_2K.jpg", "Yuwell YE660 blood pressure monitor product view"],
+      ["Change_background_and_mention_title_bdd15d44_2K.jpg", "Yuwell YE660 upper-arm blood pressure cuff"],
+      ["Change_background_and_add_title_3e15bf24_2K.jpg", "Yuwell YE660 power adapter and charger"]
+    ];
     const catalogProducts = {
       1: {
         title: "Philips InnoSpire Go Portable Mesh Nebulizer",
@@ -622,6 +661,13 @@
         price: "Rs. 1,999",
         image: "speaker/no_change_f548db28.jpg",
         alt: "Portable wireless speaker advertising banner"
+      },
+      10: {
+        title: "Yuwell YE660 Electronic Blood Pressure Monitor",
+        description: "Automatic upper-arm blood pressure monitor with a 22-45 cm cuff, voice broadcast, irregular heartbeat indication and large digital display.",
+        price: "Rs. 5,500",
+        image: "yuwell bp monitor/Using_images_to_create_ads_b6da4746_2K.jpg",
+        alt: "Yuwell YE660 electronic blood pressure monitor in a home setting"
       }
     };
 
@@ -835,6 +881,12 @@
         mainImage.alt = firstImage[1];
         document.getElementById("product-speaker-details").hidden = false;
         renderGallery(speakerImages, "speaker");
+      } else if (selectedProduct === 10) {
+        const firstImage = yuwellImages[0];
+        mainImage.src = `yuwell bp monitor/${firstImage[0]}`;
+        mainImage.alt = firstImage[1];
+        document.getElementById("product-yuwell-details").hidden = false;
+        renderGallery(yuwellImages, "yuwell bp monitor");
       } else {
         mainImage.src = image;
         mainImage.alt = alt;
